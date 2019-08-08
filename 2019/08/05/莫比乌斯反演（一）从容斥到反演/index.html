@@ -2,23 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Hello World - TieWay59&#39;s Blog</title>
+<title>莫比乌斯反演（一）从容斥到反演 - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="莫比乌斯反演（一）从容斥到反演公式《组合数学》[^1]里是这样写的： $$X_n={ 1,2, \dots ,n }$$ $$F: \mathcal{P}(X_n) \rightarrow \Re$$ $$G: \mathcal{P}(X_n) \rightarrow \Re$$   白话：$F$,$G$ 都是一个函数，表示每个$X_n$的子集对应一个实数。$\mathcal{P}(X_n) $表">
+<meta name="keywords" content="testin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/08/05/hello-world/index.html">
+<meta property="og:title" content="莫比乌斯反演（一）从容斥到反演">
+<meta property="og:url" content="http://yoursite.com/2019/08/05/莫比乌斯反演（一）从容斥到反演/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="莫比乌斯反演（一）从容斥到反演公式《组合数学》[^1]里是这样写的： $$X_n={ 1,2, \dots ,n }$$ $$F: \mathcal{P}(X_n) \rightarrow \Re$$ $$G: \mathcal{P}(X_n) \rightarrow \Re$$   白话：$F$,$G$ 都是一个函数，表示每个$X_n$的子集对应一个实数。$\mathcal{P}(X_n) $表">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-05T11:58:52.943Z">
+<meta property="og:updated_time" content="2019-08-06T12:59:48.007Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="莫比乌斯反演（一）从容斥到反演">
+<meta name="twitter:description" content="莫比乌斯反演（一）从容斥到反演公式《组合数学》[^1]里是这样写的： $$X_n={ 1,2, \dots ,n }$$ $$F: \mathcal{P}(X_n) \rightarrow \Re$$ $$G: \mathcal{P}(X_n) \rightarrow \Re$$   白话：$F$,$G$ 都是一个函数，表示每个$X_n$的子集对应一个实数。$\mathcal{P}(X_n) $表">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -93,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Hello World" height="28">
+                <img src="/images/logo.svg" alt="莫比乌斯反演（一）从容斥到反演" height="28">
             
             </a>
         </div>
@@ -125,6 +126,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -144,13 +149,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-05T11:58:52.943Z">2019-08-05</time>
+                <time class="level-item has-text-grey" datetime="2019-08-05T13:22:48.000Z">2019-08-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/set/">set</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 121 words)
+                    4 minutes read (About 664 words)
                 </span>
                 
                 
@@ -159,24 +168,47 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hello World
+                莫比乌斯反演（一）从容斥到反演
             
         </h1>
         <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+            <h1 id="莫比乌斯反演（一）从容斥到反演"><a href="#莫比乌斯反演（一）从容斥到反演" class="headerlink" title="莫比乌斯反演（一）从容斥到反演"></a>莫比乌斯反演（一）从容斥到反演</h1><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>《组合数学》[^1]里是这样写的：</p>
+<p>$$X_n={ 1,2, \dots ,n }$$</p>
+<p>$$F: \mathcal{P}(X_n) \rightarrow \Re$$</p>
+<p>$$G: \mathcal{P}(X_n) \rightarrow \Re$$ </p>
+<blockquote>
+<p>白话：$F$,$G$ 都是一个函数，表示每个$X_n$的子集对应一个实数。$\mathcal{P}(X_n) $表示全体子集的集合。（数学表达抽象是为了针对普遍情况，可以带入具体的概念去理解）</p>
+</blockquote>
+<p>其中</p>
+<p>$$ G(K)=\sum\limits_{L \subseteq K }^{} F(L)  \ (K \subseteq X_n)$$</p>
+<p>特别地（通过莫比乌斯反演），我们有</p>
+<p>$$ F(K)=\sum\limits_{L \subseteq K }^{} (-1)^{|K|-|L|}G(L)   \ (K \subseteq X_n)$$</p>
+<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>《组合数学》书本例子[^1]:（原文真的很讲究）设$A_1,A_2,\dots,A_n$ 有限集$S$ 的子集，$K\subseteq {1,2,\dots,n}$。</p>
+<p>定义$F(K)$表示计数$S$里有多少个元素，不属于所有$K$选中的子集，而且都属于没选中的子集。</p>
+<p>于是$G(K)=\sum\limits_{L \subseteq K }^{} F(L)   $ 就表示计数所有不在$K$选中的子集中的的共有元素的个数。要想通这一点有点不直接，可以画个图：（小黑圈表示有这个元素，小蓝圈表示没有。）</p>
+<p><img src=".%5C%E8%8D%89%E5%9B%BE.png" alt="草图"></p>
+<p>也可以这样想，所有不在$K$选中的子集中的的共有元素，是每个$F(L)$都会计一次的。知道了这一结论，可以发现$G(K)$ 还是蛮好算的，有</p>
+<p>$$G(K) = \left|  \bigcap\limits_{i \notin K }^{} A_i \right| $$</p>
+<p>根据反演公式，有</p>
+<p>$$ F(K)=\sum\limits_{L \subseteq K }^{} (-1)^{|K|-|L|}G(L)  $$</p>
+<p>可以把集合表达式带进去，得到</p>
+<p>$$\left|   \overline{A_1} \cap   \overline{A_2} \cap \dots \cap   \overline{A_n} \right| =\sum\limits_{L \subseteq K }^{} (-1)^{|K|-|L|} \left|  \bigcap\limits_{i \notin K }^{} A_i \right|  $$</p>
+<p>再等价替换一下，当$K= {1,2,\dots,n}$时，</p>
+<p>$$\left|   \overline{A_1} \cap   \overline{A_2} \cap \dots \cap   \overline{A_n} \right| =\sum\limits_{J \subseteq X_n }^{} (-1)^{|J|} \left|  \bigcap\limits_{i \in J }^{} A_i \right|  $$</p>
+<p>这就等价容斥原理（绝了）。</p>
+<p>理解可以这样： $\left|   \overline{A_1 \cup   A_2  \cup \dots \cup   A_n} \right|  $表示这些子集的并集，取反的元素还有多少个，这个问题容易想到是用容斥解，不过本文是为了引入莫比乌斯反演，表现一下容斥和莫比乌斯反演的关系。</p>
+<p>我不想把篇幅弄得太长，太长不太便于阅读，下一篇将正式讲莫比乌斯反演的一些例子。</p>
+<p>##<br>[^1]: 《组合数学》P115<br>[^2]: <a href="https://www.cnblogs.com/chenyang920/p/4811995.html" target="_blank" rel="noopener">莫比乌斯反演入门</a></p>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/testin/">testin</a>
+                </div>
+            </div>
         </div>
         
         
@@ -221,12 +253,19 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/05/set/Test/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/05/Test/">
                 <i class="level-item fas fa-chevron-left"></i>
                 <span class="level-item">Test</span>
             </a>
         </div>
         
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/05/set/Test/">
+                <span class="level-item">Test</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
 </div>
@@ -334,6 +373,29 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#莫比乌斯反演（一）从容斥到反演">
+        <span class="has-mr-6">1</span>
+        <span>莫比乌斯反演（一）从容斥到反演</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#公式">
+        <span class="has-mr-6">1.1</span>
+        <span>公式</span>
+        </a></li><li>
+        <a class="is-flex" href="#举例">
+        <span class="has-mr-6">1.2</span>
+        <span>举例</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -780,7 +842,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Hello World" height="28">
+                    <img src="/images/logo.svg" alt="莫比乌斯反演（一）从容斥到反演" height="28">
                 
                 </a>
                 <p class="is-size-7">

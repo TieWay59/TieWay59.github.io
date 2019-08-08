@@ -144,6 +144,269 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-08T11:56:20.000Z">2019-08-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/CP/">CP</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6 minutes read (About 972 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/08/hdu-6638-线段树-最大子段和/">hdu-6638 线段树 最大子段和</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你n个坐标，每个坐标有权值（可正可负），目标是找一个平行于坐标轴矩阵，使得矩阵内的取值求和最大，输出最大值。这个矩阵的坐标可以是非整数的，但是输入是整数的，暗示单个点也是可以被框出来的。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>比较容易想到的是，先离散化坐标，求一个最大子矩阵好像就可以了。</p>
+<p><img src="/.com//1.png" alt="img1"></p>
+<p>但是想想这个复杂度，对于一个二维数组求最大子矩阵的话，复杂度是$O(n^3)$的，这里2000个点可以对角线排列，那么二维数组的大小就是2000x2000的，三次的复杂度其实不可接受。</p>
+<p><img src="/.com//2.png" alt="img2"></p>
+<p>然后就去想，这个题里的点其实比较稀疏，只占二维平面里的一点点空间，而一般的做法第三维是需要一次$O(n)$的遍历来做区间最大子段和的，那么在这个问题里我们可以想办法在更少的时间算出最大子段和，并且避开遍历n次的时间。</p>
+<p>做法就是用线段树来维护最大字段和，对于那些落在边界内部的点，可以预处理排序所有的点，这样可尺取地逐步放入边界里的点，放完了就可以用线段树得到当前的答案，然后继续移动边界，把下面的点加入线段树，继续计算答案并更新。</p>
+<p>这个线段树的设计可以是单点更新$O(log(n))$，并$O(1)$询问的。总体复杂度$O(n^2log(n))$</p>
+<figure class="highlight cpp hljs"><figcaption><span>数组说明</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ll sum[TreeSize]; <span class="hljs-comment">//表示区间和</span></span><br><span class="line">ll lft[TreeSize]; <span class="hljs-comment">//表示当前区间左边开始连续的最大子段和</span></span><br><span class="line">ll rht[TreeSize]; <span class="hljs-comment">//表示当前区间右边开始连续的最大子段和</span></span><br><span class="line">ll ans[TreeSize]; <span class="hljs-comment">//表示当前区间的答案（最大字段和）</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>Pro.ID</th>
+<th>Exe.Time</th>
+<th>Exe.Memory</th>
+<th>Language</th>
+<th>Author</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6638" target="_blank" rel="noopener">6638</a></td>
+<td>2308MS</td>
+<td>1760K</td>
+<td>G++</td>
+<td><a href="http://acm.hdu.edu.cn/userstatus.php?user=tieway59" target="_blank" rel="noopener">tieway59</a></td>
+</tr>
+</tbody></table>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  _debug(x) cerr&lt;&lt; #x &lt;&lt; <span class="hljs-meta-string">" = "</span>&lt;&lt;x &lt;&lt;endl</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"><span class="hljs-keyword">const</span> ll INF = <span class="hljs-number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> ll LINF = <span class="hljs-number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">4000</span> + <span class="hljs-number">59</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> TreeSize = MAXN &lt;&lt; <span class="hljs-number">2</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">SegTree</span> &#123;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  lson   (oo&lt;&lt;1)</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  rson   (oo&lt;&lt;1|1)</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">int</span> n;</span><br><span class="line">    ll sum[TreeSize];</span><br><span class="line">    ll lft[TreeSize];</span><br><span class="line">    ll rht[TreeSize];</span><br><span class="line">    ll ans[TreeSize];</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-keyword">int</span> _n)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">this</span>-&gt;n = _n;</span><br><span class="line">        build(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, _n);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> oo, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (l == r) &#123;</span><br><span class="line">            sum[oo] = lft[oo] = rht[oo] = ans[oo] = <span class="hljs-number">0</span>;</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">int</span> m = (l + r) &gt;&gt; <span class="hljs-number">1</span>;</span><br><span class="line">        build(lson, l, m);</span><br><span class="line">        build(rson, m + <span class="hljs-number">1</span>, r);</span><br><span class="line">        sum[oo] = lft[oo] = rht[oo] = ans[oo] = <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> oo, <span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> pos, ll val)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (l == r &amp;&amp; r == pos) &#123;</span><br><span class="line">            sum[oo] += val;<span class="hljs-comment">//+val?</span></span><br><span class="line">            rht[oo] = max(<span class="hljs-number">0l</span>l, sum[oo]);</span><br><span class="line">            lft[oo] = max(<span class="hljs-number">0l</span>l, sum[oo]);</span><br><span class="line">            ans[oo] = max(<span class="hljs-number">0l</span>l, sum[oo]);</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">int</span> m = (l + r) &gt;&gt; <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span> (pos &lt;= m)</span><br><span class="line">            update(lson, l, m, pos, val);</span><br><span class="line">        <span class="hljs-keyword">else</span></span><br><span class="line">            update(rson, m + <span class="hljs-number">1</span>, r, pos, val);</span><br><span class="line"></span><br><span class="line">        lft[oo] = lft[lson];</span><br><span class="line">        rht[oo] = rht[rson];</span><br><span class="line"></span><br><span class="line">        sum[oo] = sum[lson] + sum[rson];</span><br><span class="line">        ans[oo] = max(ans[lson], ans[rson]);</span><br><span class="line">        ans[oo] = max(ans[oo], rht[lson] + lft[rson]);</span><br><span class="line"></span><br><span class="line">        lft[oo] = max(lft[oo], sum[lson] + lft[rson]);</span><br><span class="line">        rht[oo] = max(rht[oo], rht[lson] + sum[rson]);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> (lft[lson] == sum[lson])</span><br><span class="line">            ans[oo] = max(ans[oo], lft[lson] + lft[rson]);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> (rht[rson] == sum[rson])</span><br><span class="line">            ans[oo] = max(ans[oo], rht[lson] + rht[rson]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos, ll val)</span> </span>&#123;</span><br><span class="line">        update(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, n, pos, val);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> ans[<span class="hljs-number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">SegTree tree;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">point</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x, y, v;</span><br><span class="line">&#125; p[MAXN];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> dsc[MAXN], dtot;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initDsc</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    sort(dsc, dsc + dtot);</span><br><span class="line">    dtot = unique(dsc, dsc + dtot) - dsc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getDsc</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;val)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> lower_bound(dsc, dsc + dtot, val) - dsc + <span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n;</span><br><span class="line">ll ans;</span><br><span class="line"><span class="hljs-keyword">int</span> Kase;</span><br><span class="line"><span class="hljs-keyword">int</span> xmax, ymax;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cin</span> &gt;&gt; Kase;</span><br><span class="line">    <span class="hljs-keyword">while</span> (Kase--) &#123;</span><br><span class="line">        ans = <span class="hljs-number">0</span>;</span><br><span class="line">        dtot = <span class="hljs-number">0</span>;</span><br><span class="line">        xmax = ymax = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-built_in">cin</span> &gt;&gt; n;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            <span class="hljs-built_in">cin</span> &gt;&gt; p[i].x &gt;&gt; p[i].y &gt;&gt; p[i].v;</span><br><span class="line">            dsc[dtot++] = p[i].x;</span><br><span class="line">            dsc[dtot++] = p[i].y;</span><br><span class="line">        &#125;</span><br><span class="line">        initDsc();</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">            p[i].x = getDsc(p[i].x);</span><br><span class="line">            p[i].y = getDsc(p[i].y);</span><br><span class="line">            xmax = max(xmax, p[i].x);</span><br><span class="line">            ymax = max(ymax, p[i].y);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        sort(p + <span class="hljs-number">1</span>, p + <span class="hljs-number">1</span> + n, [](<span class="hljs-keyword">const</span> point &amp;a, <span class="hljs-keyword">const</span> point &amp;b) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (a.x == b.x)<span class="hljs-keyword">return</span> a.y &lt; b.y;</span><br><span class="line">            <span class="hljs-keyword">return</span> a.x &lt; b.x;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> l = <span class="hljs-number">1</span>; l &lt;= n; l++) &#123;</span><br><span class="line">            tree.init(ymax);</span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> r = l; r &lt;= n; r++) &#123;</span><br><span class="line">                tree.update(p[r].y, p[r].v);</span><br><span class="line">                <span class="hljs-keyword">if</span> (p[r].x != p[r + <span class="hljs-number">1</span>].x) &#123;</span><br><span class="line">                    ans = max(ans, tree.query());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">while</span> (p[l].x == p[l + <span class="hljs-number">1</span>].x)l++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">2</span></span><br><span class="line"><span class="hljs-comment">4</span></span><br><span class="line"><span class="hljs-comment">1 1 50</span></span><br><span class="line"><span class="hljs-comment">2 1 50</span></span><br><span class="line"><span class="hljs-comment">1 2 50</span></span><br><span class="line"><span class="hljs-comment">2 2 -500</span></span><br><span class="line"><span class="hljs-comment">2</span></span><br><span class="line"><span class="hljs-comment">-1 1 5</span></span><br><span class="line"><span class="hljs-comment">-1 1 1</span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-07T08:51:58.000Z">2019-08-07</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 minutes read (About 595 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/08/07/2019-8-6-队内训练/">2019.8.6 队内训练</a>
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://codeforces.com/gym/101962" target="_blank" rel="noopener">UFBA Practice Session for Brazilian ICPC Regionals - 2018</a></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>AC</th>
+<th>Dsc</th>
+<th>Stt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://codeforces.com/gym/101962/problem/A" target="_blank" rel="noopener">A</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/A" target="_blank" rel="noopener">Multiset Machine</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/A" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x9</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/B" target="_blank" rel="noopener">B</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/B" target="_blank" rel="noopener">Color Changing Sofa</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/B" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x140</a></td>
+<td>签到</td>
+<td><code>√-</code></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/C" target="_blank" rel="noopener">C</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/C" target="_blank" rel="noopener">Renan and Cirque du Soleil</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/C" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x89</a></td>
+<td>推公式</td>
+<td><code>√-</code></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/D" target="_blank" rel="noopener">D</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/D" target="_blank" rel="noopener">Carnival</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/D" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x25</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/E" target="_blank" rel="noopener">E</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/E" target="_blank" rel="noopener">Hat-Xor</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/E" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x135</a></td>
+<td>想法/读题</td>
+<td><code>√+</code></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/F" target="_blank" rel="noopener">F</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/F" target="_blank" rel="noopener">Renanzinho and His Toys</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/F" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x70</a></td>
+<td>二分/dp/尺取</td>
+<td><code>○</code></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/G" target="_blank" rel="noopener">G</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/G" target="_blank" rel="noopener">Barra Lighthouse</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/G" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x31</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/H" target="_blank" rel="noopener">H</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/H" target="_blank" rel="noopener">All-In</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/H" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x48</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/I" target="_blank" rel="noopener">I</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/I" target="_blank" rel="noopener">Colonial Mansions</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/I" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x101</a></td>
+<td>线段树</td>
+<td><code>√-</code></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/J" target="_blank" rel="noopener">J</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/J" target="_blank" rel="noopener">Soteros</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/J" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x58</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/K" target="_blank" rel="noopener">K</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/K" target="_blank" rel="noopener">Rei do Cangaço</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/K" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x133</a></td>
+<td>模拟</td>
+<td><code>√-</code></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/L" target="_blank" rel="noopener">L</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/L" target="_blank" rel="noopener">Code Name Hummingbird</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/L" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x3</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://codeforces.com/gym/101962/problem/M" target="_blank" rel="noopener">M</a></td>
+<td><a href="https://codeforces.com/gym/101962/problem/M" target="_blank" rel="noopener">Sorting Machine</a></td>
+<td><a href="https://codeforces.com/gym/101962/status/M" target="_blank" rel="noopener"><img src="https://sta.codeforces.com/s/54321/images/icons/user.png" alt="img"> x41</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>○</code> 代表赛后补题</li>
+<li><code>√+</code> 代表赛内我通过的</li>
+<li><code>√-</code> 代表赛内不是我做的</li>
+<li><code>√-○</code>代表赛内不是我做的，补了</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>=</th>
+<th align="left">Pen</th>
+<th align="left"><a href="https://codeforces.com/gym/101962/problem/A" target="_blank" rel="noopener">A</a></th>
+<th align="left"><a href="https://codeforces.com/gym/101962/problem/B" target="_blank" rel="noopener">B</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/C" target="_blank" rel="noopener">C</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/D" target="_blank" rel="noopener">D</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/E" target="_blank" rel="noopener">E</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/F" target="_blank" rel="noopener">F</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/G" target="_blank" rel="noopener">G</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/H" target="_blank" rel="noopener">H</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/I" target="_blank" rel="noopener">I</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/J" target="_blank" rel="noopener">J</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/K" target="_blank" rel="noopener">K</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/L" target="_blank" rel="noopener">L</a></th>
+<th><a href="https://codeforces.com/gym/101962/problem/M" target="_blank" rel="noopener">M</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1 (64)</td>
+<td>5</td>
+<td align="left">657</td>
+<td align="left"></td>
+<td align="left">+1         00:29</td>
+<td>+2         02:18</td>
+<td></td>
+<td>+         02:06</td>
+<td>-2</td>
+<td></td>
+<td>-1</td>
+<td>+1         03:31</td>
+<td></td>
+<td>+         01:13</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-08-05T14:05:36.000Z">2019-08-05</time>
                 
                 <div class="level-item">
@@ -273,141 +536,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-05T13:22:48.000Z">2019-08-05</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 525 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/05/set/Test/">Test</a>
-            
-        </h1>
-        <div class="content">
-            <p><a href="https://blog.csdn.net/Tighway/article/details/96392868" target="_blank" rel="noopener">index</a> &gt; STL &gt; map</p>
-<hr>
-<p>细致的介绍还是前人做的好，我自愧不如。</p>
-<p><a href="https://blog.csdn.net/fhb1922702569/article/details/80984774" target="_blank" rel="noopener">https://blog.csdn.net/fhb1922702569/article/details/80984774</a></p>
-<p><a href="https://blog.csdn.net/sevenjoin/article/details/81943864" target="_blank" rel="noopener">https://blog.csdn.net/sevenjoin/article/details/81943864</a></p>
-<p><a href="https://blog.csdn.net/acidgl8757/article/details/17416439" target="_blank" rel="noopener">关于比较</a></p>
-<p>列几点我常忽视的细节：</p>
-<ol>
-<li>用<code>mp.insert()</code>函数插入已有key的数据时，不能插入数据。而<code>mp[key]</code>引用可改写key对应的value。</li>
-<li>map內部的实现自建一颗红黑树，这颗树具有对数据自动排序的功能。（面试可能也会见到相关的提问）</li>
-</ol>
-<h2 id="部分应用"><a href="#部分应用" class="headerlink" title="部分应用"></a>部分应用</h2><h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><p>单纯利用一一对应的特性。</p>
-<h3 id="打标记"><a href="#打标记" class="headerlink" title="打标记"></a>打标记</h3><p>虽然说用 <code>[]</code> 很方便，但是如果就是二元的标记，还是巧用insert/erase/find/count 比较稳妥。（原因有待解释，可能打脸）</p>
-<h3 id="特殊二叉搜索树（类红黑树）"><a href="#特殊二叉搜索树（类红黑树）" class="headerlink" title="特殊二叉搜索树（类红黑树）"></a>特殊二叉搜索树（类红黑树）</h3><blockquote>
-<p><em>——“你其实有一棵随叫随到的红黑树。”</em></p>
-</blockquote>
-<p>须知：</p>
-<ul>
-<li><p>map是有序容器。</p>
-</li>
-<li><p><code>mp.begin()</code> 可访问第一个键值对（最值）。</p>
-</li>
-<li><p><code>mp[key]</code> 修改某个key的权值，而且改完保持有序。</p>
-</li>
-<li><p><code>mp.insert() mp.erase() mp.find()</code> 增删改查都有。</p>
-</li>
-<li><p>甚至还能自行 <code>mp.lower_bound() mp.upper_bound()</code>   </p>
-</li>
-<li><p>默认<code>lesser&lt;int&gt;</code>升序，想要降序也可以（如果不是原生类型得另外写比较类）：</p>
-</li>
-<li><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, greater&lt;<span class="hljs-keyword">int</span>&gt; &gt; cnts;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>有了上面这些领悟，你这可以解决某些特定的情况：</p>
-<blockquote>
-<p>比如有一群人，每个人的分数不同，找一下最高分的人有几个。</p>
-<p>或者，要输出，第一/第二/第三的分数，和对应的人数。</p>
-<p>如果嫌简单，再难一点，修改m次分数，每次修改就再求一次答案。</p>
-<p>1e6的人数，1e9的分数，可有负分，修改/询问1e6。</p>
-</blockquote>
-<p>可能以上这个题目比较拙劣，如果以后有更好的会再放进来。简单地说，充分利用key排序和修改方便的特性。</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-05T11:58:52.943Z">2019-08-05</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 121 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/08/05/hello-world/">Hello World</a>
-            
-        </h1>
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -463,7 +591,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        4
                     </p>
                 </div>
             </div>
@@ -473,7 +601,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        5
                     </p>
                 </div>
             </div>
@@ -570,6 +698,22 @@
             </h3>
             <ul class="menu-list">
             <li>
+        <a class="level is-marginless" href="/categories/CP/">
+            <span class="level-start">
+                <span class="level-item">CP</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/CP/Solutions/">
+            <span class="level-start">
+                <span class="level-item">Solutions</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/misc/">
             <span class="level-start">
                 <span class="level-item">misc</span>
@@ -597,7 +741,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/testin/" style="font-size: 20px;">testin</a> <a href="/tags/建站/" style="font-size: 10px;">建站</a>
+        <a href="/tags/hdu/" style="font-size: 10px;">hdu</a> <a href="/tags/testin/" style="font-size: 10px;">testin</a> <a href="/tags/小结/" style="font-size: 10px;">小结</a> <a href="/tags/建站/" style="font-size: 10px;">建站</a> <a href="/tags/线段树/" style="font-size: 10px;">线段树</a>
     </div>
 </div>
 
@@ -611,6 +755,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/08/hdu-6638-线段树-最大子段和/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="hdu-6638 线段树 最大子段和">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T11:56:20.000Z">2019-08-08</time></div>
+                    <a href="/2019/08/08/hdu-6638-线段树-最大子段和/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6638 线段树 最大子段和</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/07/2019-8-6-队内训练/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019.8.6 队内训练">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T08:51:58.000Z">2019-08-07</time></div>
+                    <a href="/2019/08/07/2019-8-6-队内训练/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.6 队内训练</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -645,44 +827,6 @@
                     <a href="/2019/08/05/Test/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Test</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/set/">set</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/05/set/Test/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Test">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T13:22:48.000Z">2019-08-05</time></div>
-                    <a href="/2019/08/05/set/Test/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Test</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/05/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T11:58:52.943Z">2019-08-05</time></div>
-                    <a href="/2019/08/05/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -725,15 +869,36 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/hdu/">
+                        <span class="tag">hdu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/testin/">
                         <span class="tag">testin</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/小结/">
+                        <span class="tag">小结</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/建站/">
                         <span class="tag">建站</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -763,6 +928,44 @@
         
         <article class="media">
             
+            <a href="/2019/08/08/hdu-6638-线段树-最大子段和/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="hdu-6638 线段树 最大子段和">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T11:56:20.000Z">2019-08-08</time></div>
+                    <a href="/2019/08/08/hdu-6638-线段树-最大子段和/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6638 线段树 最大子段和</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/07/2019-8-6-队内训练/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="2019.8.6 队内训练">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T08:51:58.000Z">2019-08-07</time></div>
+                    <a href="/2019/08/07/2019-8-6-队内训练/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.6 队内训练</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/08/05/Hexo-ICARUS-使用指南与文章模板/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Hexo+ICARUS 使用指南与文章模板">
@@ -794,44 +997,6 @@
                     <a href="/2019/08/05/Test/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Test</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/set/">set</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/05/set/Test/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Test">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T13:22:48.000Z">2019-08-05</time></div>
-                    <a href="/2019/08/05/set/Test/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Test</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/05/hello-world/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-05T11:58:52.943Z">2019-08-05</time></div>
-                    <a href="/2019/08/05/hello-world/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hello World</a>
-                    <p class="is-size-7 is-uppercase">
-                        
                     </p>
                 </div>
             </div>
@@ -874,15 +1039,36 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/hdu/">
+                        <span class="tag">hdu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/testin/">
                         <span class="tag">testin</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/小结/">
+                        <span class="tag">小结</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/建站/">
                         <span class="tag">建站</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
