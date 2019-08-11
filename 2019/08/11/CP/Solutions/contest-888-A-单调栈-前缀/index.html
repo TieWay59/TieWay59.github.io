@@ -16,7 +16,7 @@
 <meta property="og:description" content="题意给一个01矩阵，然后求一个矩阵的最大全1子矩阵数量，这些矩阵要保证，不被其他全一矩阵包含。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/gallery/solution.jpg">
-<meta property="og:updated_time" content="2019-08-11T03:59:10.951Z">
+<meta property="og:updated_time" content="2019-08-11T04:01:37.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="contest-888-A 单调栈 前缀">
 <meta name="twitter:description" content="题意给一个01矩阵，然后求一个矩阵的最大全1子矩阵数量，这些矩阵要保证，不被其他全一矩阵包含。">
@@ -181,7 +181,7 @@
             <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给一个01矩阵，然后求一个矩阵的最大全1子矩阵数量，这些矩阵要保证，不被其他全一矩阵包含。</p>
 <a id="more"></a>
 
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><img src="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/contest-888-A-%E5%8D%95%E8%B0%83%E6%A0%88-%E5%89%8D%E7%BC%80%5C1.png" alt="1565495441958"></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><img src="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/1.png" alt=" "></p>
 <p>官方题解说的很好了，补充：栈里存的高度会要么大于当前up，要么等于当前up，显然等于的时候是不计答案的，大于的时候需要计答案，并且这个矩形的范围其实是从是当前是ij左边的位置开始。（可能和写法有关）。</p>
 <p>这样的题目没有想法感觉非常危险。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>特别地，我枚举j到m+1可以省一次最后的退栈代码。（注释）</p>
