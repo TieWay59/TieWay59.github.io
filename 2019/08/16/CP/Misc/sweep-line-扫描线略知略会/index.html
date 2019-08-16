@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>sweep line 扫描线略知略会 - TieWay59&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="做了一些有相同思路的题，先留个坑。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sweep line 扫描线略知略会">
+<meta property="og:url" content="https://tieway59.github.io/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/index.html">
+<meta property="og:site_name" content="TieWay59&#39;s Blog">
+<meta property="og:description" content="做了一些有相同思路的题，先留个坑。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://tieway59.github.io/gallery/solution.jpg">
+<meta property="og:updated_time" content="2019-08-16T14:31:35.038Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sweep line 扫描线略知略会">
+<meta name="twitter:description" content="做了一些有相同思路的题，先留个坑。">
+<meta name="twitter:image" content="https://tieway59.github.io/gallery/solution.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.10.0-12/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="sweep line 扫描线略知略会" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/solution.jpg" alt="sweep line 扫描线略知略会">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-16T13:56:51.000Z">2019-08-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/CP/">CP</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/CP/Misc/">Misc</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5 minutes read (About 748 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                sweep line 扫描线略知略会
+            
+        </h1>
+        <div class="content">
+            <p>做了一些有相同思路的题，先留个坑。</p>
+<a id="more"></a>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>🌎 2019/8/16 21:48:22<br>我的理解是 对一些事件根据一定顺序排序然后for</p>
+<p>​        ——辰巨如是说</p>
+</blockquote>
+<h2 id="待阅读"><a href="#待阅读" class="headerlink" title="待阅读"></a>待阅读</h2><p><a href="https://codeforces.com/blog/entry/20377" target="_blank" rel="noopener">https://codeforces.com/blog/entry/20377</a></p>
+<p><a href="https://blog.csdn.net/xianpingping/article/details/83032798" target="_blank" rel="noopener">https://blog.csdn.net/xianpingping/article/details/83032798</a></p>
+<p><a href="https://blog.csdn.net/sslz_fsy/article/details/82902644" target="_blank" rel="noopener">https://blog.csdn.net/sslz_fsy/article/details/82902644</a></p>
+<h2 id="例题与例程"><a href="#例题与例程" class="headerlink" title="例题与例程"></a>例题与例程</h2><h3 id="ZJNU-1426"><a href="#ZJNU-1426" class="headerlink" title="ZJNU 1426"></a><a href="http://acm.zjnu.edu.cn/CLanguage/showproblem?problem_id=1426" target="_blank" rel="noopener">ZJNU 1426</a></h3><p>(弊校OJ，可能打不开)</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,cur,ans;</span><br><span class="line"><span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; cnt;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> a, b, i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="hljs-built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        cnt[a - <span class="hljs-number">1</span>]++;</span><br><span class="line">        cnt[b]--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> pi:cnt) &#123;</span><br><span class="line">        ans = max(ans, cur);</span><br><span class="line">        cur += pi.second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="NCOJ-889D-Symmetrical-Painting"><a href="#NCOJ-889D-Symmetrical-Painting" class="headerlink" title="NCOJ 889D Symmetrical Painting"></a><a href="https://ac.nowcoder.com/acm/contest/889/J" target="_blank" rel="noopener">NCOJ 889D Symmetrical Painting</a></h3><p>2019牛客暑期多校训练营（第九场）J </p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  get0(x)  get<span class="hljs-meta-string">&lt;0&gt;(x)</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  get1(x)  get<span class="hljs-meta-string">&lt;1&gt;(x)</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  _debug(x) cerr&lt;&lt;#x&lt;&lt;<span class="hljs-meta-string">" = "</span>&lt;&lt;x&lt;&lt;endl</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1e6</span> + <span class="hljs-number">59</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> ll MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;</span><br><span class="line"> </span><br><span class="line">ll n, ans;</span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;tuple&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; &gt; pos;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="hljs-built_in">cin</span> &gt;&gt; n;</span><br><span class="line"> </span><br><span class="line">    pos.emplace_back(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span> (ll l, r, i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="hljs-built_in">cin</span> &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        pos.emplace_back(l + l, <span class="hljs-number">1</span>);</span><br><span class="line">        pos.emplace_back(l + r, <span class="hljs-number">-2</span>);</span><br><span class="line">        pos.emplace_back(r + r, <span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(pos.begin(), pos.end());</span><br><span class="line"> </span><br><span class="line">    ll cur = <span class="hljs-number">0</span>;</span><br><span class="line">    ll del = <span class="hljs-number">0</span>;</span><br><span class="line">    ll las = <span class="hljs-number">0</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;p:pos) &#123;</span><br><span class="line">        cur += (get0(p) - las) * del;</span><br><span class="line">        del += get1(p);</span><br><span class="line">        las = get0(p);</span><br><span class="line">        ans = max(ans, cur);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HDU-6627"><a href="#HDU-6627" class="headerlink" title="HDU 6627"></a><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6627" target="_blank" rel="noopener">HDU 6627</a></h3><p><a href="http://acm.hdu.edu.cn/search.php?field=problem&key=2019+Multi-University+Training+Contest+5&source=1&searchmode=source" target="_blank" rel="noopener">HDU 2019 Multi-University Training Contest 5 </a></p>
+<p>这题main函数里其实不复杂，但是分数可真是搞死我了。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  get0(x)  get<span class="hljs-meta-string">&lt;0&gt;(x)</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  get1(x)  get<span class="hljs-meta-string">&lt;1&gt;(x)</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  get2(x)  get<span class="hljs-meta-string">&lt;2&gt;(x)</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  _debug(x) cerr&lt;&lt;#x&lt;&lt;<span class="hljs-meta-string">" = "</span>&lt;&lt;x&lt;&lt;endl</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>  ll;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1e6</span> + <span class="hljs-number">59</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> ll MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> ll INF = <span class="hljs-number">1001</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">frac</span> &#123;</span></span><br><span class="line">    ll a, b;</span><br><span class="line"></span><br><span class="line">    frac() : a(<span class="hljs-number">0</span>), b(<span class="hljs-number">1</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    frac(ll _a) : a(_a), b(<span class="hljs-number">1</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    frac(ll _a, ll _b) : a(_a), b(_b) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (a == <span class="hljs-number">0</span>) &#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>-&gt;b = <span class="hljs-number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span> (b &lt; <span class="hljs-number">0</span>) &#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>-&gt;a = -_a;</span><br><span class="line">            <span class="hljs-keyword">this</span>-&gt;b = -_b;</span><br><span class="line">        &#125;</span><br><span class="line">        ll g = __gcd(<span class="hljs-built_in">abs</span>(a), <span class="hljs-built_in">abs</span>(b));</span><br><span class="line">        <span class="hljs-keyword">this</span>-&gt;a /= g;</span><br><span class="line">        <span class="hljs-keyword">this</span>-&gt;b /= g;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    frac <span class="hljs-keyword">operator</span>+(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> frac(a * rht.b + b * rht.a, b * rht.b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    frac <span class="hljs-keyword">operator</span>-(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> frac(a * rht.b - b * rht.a, b * rht.b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    frac <span class="hljs-keyword">operator</span>*(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> frac(a * rht.a, b * rht.b);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    frac <span class="hljs-keyword">operator</span>/(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> frac(a * rht.b, b * rht.a);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&lt;(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> a * rht.b &lt; b * rht.a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&lt;=(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> a * rht.b &lt;= b * rht.a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&gt;(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> a * rht.b &gt; b * rht.a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&gt;=(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> a * rht.b &gt;= b * rht.a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>==(<span class="hljs-keyword">const</span> frac &amp;rht) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> a * rht.b == b * rht.a;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">friend</span> ostream &amp;<span class="hljs-keyword">operator</span>&lt;&lt;(ostream &amp;out, frac &amp;T);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">operator</span><span class="hljs-params">()</span><span class="hljs-params">(ll _a, ll _b)</span> </span>&#123;</span><br><span class="line">        *<span class="hljs-keyword">this</span> = frac(_a, _b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; fc;</span><br><span class="line"></span><br><span class="line">ostream &amp;<span class="hljs-keyword">operator</span>&lt;&lt;(ostream &amp;out, fc &amp;T) &#123;</span><br><span class="line">    out &lt;&lt; T.a &lt;&lt; <span class="hljs-string">"/"</span> &lt;&lt; T.b;</span><br><span class="line">    <span class="hljs-keyword">return</span> out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// y1&lt;y2</span></span><br><span class="line"><span class="hljs-function">fc <span class="hljs-title">calc1</span><span class="hljs-params">(fc x1, fc y1, fc x2, fc y2, fc c)</span> </span>&#123;</span><br><span class="line">    fc dx = x2 - x1;</span><br><span class="line">    fc dy = y2 - y1;</span><br><span class="line">    fc dc = c - y1;</span><br><span class="line">    <span class="hljs-keyword">return</span> x1 + dc * dx / dy;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// y1&gt;y2</span></span><br><span class="line"><span class="hljs-function">fc <span class="hljs-title">calc2</span><span class="hljs-params">(fc x1, fc y1, fc x2, fc y2, fc c)</span> </span>&#123;</span><br><span class="line">    fc dx = x2 - x1;</span><br><span class="line">    fc dy = y1 - y2;</span><br><span class="line">    fc dc = c - y2;</span><br><span class="line">    <span class="hljs-keyword">return</span> x2 - dc * dx / dy;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll n, kase, c;</span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;tuple&lt;fc, ll, ll&gt; &gt; pos;</span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;fc&gt; ans;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cin</span> &gt;&gt; kase;</span><br><span class="line">    <span class="hljs-keyword">while</span> (kase--) &#123;</span><br><span class="line"></span><br><span class="line">        ans.clear();</span><br><span class="line">        pos.clear();</span><br><span class="line">        <span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; c;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-function">fc <span class="hljs-title">prek</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>;</span><br><span class="line">        <span class="hljs-function">fc <span class="hljs-title">preb</span><span class="hljs-params">(<span class="hljs-number">0</span>)</span></span>;</span><br><span class="line">        <span class="hljs-function">fc <span class="hljs-title">lasx</span><span class="hljs-params">(-INF)</span></span>;</span><br><span class="line">        fc lasy;</span><br><span class="line">        <span class="hljs-function">fc <span class="hljs-title">v</span><span class="hljs-params">(c)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-comment">//pos.emplace_back(-INF, 0, 0);</span></span><br><span class="line">        <span class="hljs-keyword">for</span> (ll _a, _b, i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="hljs-built_in">cin</span> &gt;&gt; _a &gt;&gt; _b;</span><br><span class="line">            prek = prek + fc(-_a);</span><br><span class="line">            preb = preb + fc(-_b);</span><br><span class="line">            pos.emplace_back(frac(-_b, _a), <span class="hljs-number">2</span> * _a, <span class="hljs-number">2</span> * _b);<span class="hljs-comment">// +inf ,+k</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        pos.emplace_back(INF, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);</span><br><span class="line">        lasy = prek * lasx + preb;</span><br><span class="line"></span><br><span class="line">        sort(pos.begin(), pos.end());</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">bool</span> infi = <span class="hljs-literal">false</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;p:pos) &#123;</span><br><span class="line"></span><br><span class="line">            fc x, y;</span><br><span class="line">            ll k, b;</span><br><span class="line">            tie(x, k, b) = p;</span><br><span class="line">            y = (prek + k) * x + (preb + b);</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span> (lasy == v &amp;&amp; y == v) &#123;</span><br><span class="line">                ans.clear();</span><br><span class="line">                infi = <span class="hljs-literal">true</span>;</span><br><span class="line">                <span class="hljs-keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span> (lasy &lt;= v &amp;&amp; y &gt; v) &#123;</span><br><span class="line">                ans.push_back(calc1(lasx, lasy, x, y, v));</span><br><span class="line">            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lasy &gt;= v &amp;&amp; y &lt; v) &#123;</span><br><span class="line">                ans.push_back(calc2(lasx, lasy, x, y, v));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            lasy = y;</span><br><span class="line">            lasx = x;</span><br><span class="line">            prek = prek + k;</span><br><span class="line">            preb = preb + b;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> (infi) &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"-1\n"</span>;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ans.empty()) &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"0\n"</span>;</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            <span class="hljs-built_in">cout</span> &lt;&lt; ans.size() &lt;&lt; <span class="hljs-string">" "</span>;</span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ans.size(); i++)</span><br><span class="line">                <span class="hljs-built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="hljs-string">" \n"</span>[i == ans.size() - <span class="hljs-number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        ans.clear();</span><br><span class="line">        pos.clear();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment">4</span></span><br><span class="line"><span class="hljs-comment">2 3</span></span><br><span class="line"><span class="hljs-comment">1 2</span></span><br><span class="line"><span class="hljs-comment">1 -1</span></span><br><span class="line"><span class="hljs-comment">3 3</span></span><br><span class="line"><span class="hljs-comment">2 1</span></span><br><span class="line"><span class="hljs-comment">2 2</span></span><br><span class="line"><span class="hljs-comment">2 3</span></span><br><span class="line"><span class="hljs-comment">2 1</span></span><br><span class="line"><span class="hljs-comment">3 5</span></span><br><span class="line"><span class="hljs-comment">4 -1</span></span><br><span class="line"><span class="hljs-comment">3 2</span></span><br><span class="line"><span class="hljs-comment">1 -1</span></span><br><span class="line"><span class="hljs-comment">1 -2</span></span><br><span class="line"><span class="hljs-comment">1 -3</span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/ali.png" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wc.png" alt="Wechat"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/12/2019-8-12-杭电多校第七场/">
+                <span class="level-item">2019.8.12 杭电多校第七场</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avt.jpg" alt="TieWay59">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        TieWay59
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        A flappy yellow dog.
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Zhejiang, China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        10
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        7
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/TieWay59" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/TieWay59">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Weibo" href="https://weibo.com/u/6771232128">
+                
+                <i class="fab fa-weibo"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#思路">
+        <span class="has-mr-6">1</span>
+        <span>思路</span>
+        </a></li><li>
+        <a class="is-flex" href="#待阅读">
+        <span class="has-mr-6">2</span>
+        <span>待阅读</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题与例程">
+        <span class="has-mr-6">3</span>
+        <span>例题与例程</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#ZJNU-1426">
+        <span class="has-mr-6">3.1</span>
+        <span>ZJNU 1426</span>
+        </a></li><li>
+        <a class="is-flex" href="#NCOJ-889D-Symmetrical-Painting">
+        <span class="has-mr-6">3.2</span>
+        <span>NCOJ 889D Symmetrical Painting</span>
+        </a></li><li>
+        <a class="is-flex" href="#HDU-6627">
+        <span class="has-mr-6">3.3</span>
+        <span>HDU 6627</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://www.gugugu.org.cn" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">YTX</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.gugugu.org.cn</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/CP/">
+            <span class="level-start">
+                <span class="level-item">CP</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/CP/Logs/">
+            <span class="level-start">
+                <span class="level-item">Logs</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CP/Misc/">
+            <span class="level-start">
+                <span class="level-item">Misc</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CP/Solutions/">
+            <span class="level-start">
+                <span class="level-item">Solutions</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Misc/">
+            <span class="level-start">
+                <span class="level-item">Misc</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hdu/" style="font-size: 10px;">hdu</a> <a href="/tags/前缀和/" style="font-size: 10px;">前缀和</a> <a href="/tags/单调栈/" style="font-size: 10px;">单调栈</a> <a href="/tags/建站/" style="font-size: 10px;">建站</a> <a href="/tags/照片/" style="font-size: 10px;">照片</a> <a href="/tags/线段树/" style="font-size: 10px;">线段树</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="sweep line 扫描线略知略会">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-16T13:56:51.000Z">2019-08-16</time></div>
+                    <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sweep line 扫描线略知略会</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.12 杭电多校第七场">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-12T14:11:21.000Z">2019-08-12</time></div>
+                    <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.12 杭电多校第七场</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="contest-888-A 单调栈 前缀">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T03:47:01.000Z">2019-08-11</time></div>
+                    <a href="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/" class="title has-link-black-ter is-size-6 has-text-weight-normal">contest-888-A 单调栈 前缀</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/09/Misc/Qzone-相册照片链接测试/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Qzone 相册照片链接测试">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T04:16:52.000Z">2019-08-09</time></div>
+                    <a href="/2019/08/09/Misc/Qzone-相册照片链接测试/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Qzone 相册照片链接测试</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/09/Misc/Github没计绿点的问题/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Github没计绿点的问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T01:57:08.000Z">2019-08-09</time></div>
+                    <a href="/2019/08/09/Misc/Github没计绿点的问题/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Github没计绿点的问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hdu/">
+                        <span class="tag">hdu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前缀和/">
+                        <span class="tag">前缀和</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/建站/">
+                        <span class="tag">建站</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/照片/">
+                        <span class="tag">照片</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="sweep line 扫描线略知略会">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-16T13:56:51.000Z">2019-08-16</time></div>
+                    <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sweep line 扫描线略知略会</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.12 杭电多校第七场">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-12T14:11:21.000Z">2019-08-12</time></div>
+                    <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.12 杭电多校第七场</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="contest-888-A 单调栈 前缀">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-11T03:47:01.000Z">2019-08-11</time></div>
+                    <a href="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/" class="title has-link-black-ter is-size-6 has-text-weight-normal">contest-888-A 单调栈 前缀</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/09/Misc/Qzone-相册照片链接测试/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Qzone 相册照片链接测试">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T04:16:52.000Z">2019-08-09</time></div>
+                    <a href="/2019/08/09/Misc/Qzone-相册照片链接测试/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Qzone 相册照片链接测试</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/09/Misc/Github没计绿点的问题/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Github没计绿点的问题">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T01:57:08.000Z">2019-08-09</time></div>
+                    <a href="/2019/08/09/Misc/Github没计绿点的问题/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Github没计绿点的问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hdu/">
+                        <span class="tag">hdu</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前缀和/">
+                        <span class="tag">前缀和</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/建站/">
+                        <span class="tag">建站</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/照片/">
+                        <span class="tag">照片</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="sweep line 扫描线略知略会" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Tieway59&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
