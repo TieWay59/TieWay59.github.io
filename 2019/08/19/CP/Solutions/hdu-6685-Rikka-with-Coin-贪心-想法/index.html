@@ -2,24 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Categories - TieWay59&#39;s Blog</title>
+<title>hdu-6685 Rikka with Coin 贪心 想法 - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="I&apos;m not hungry, neither foolish.">
-<meta name="keywords" content="github,照片,建站,贪心,想法,暴力,单调栈,前缀和,线段树,hdu">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TieWay59&#39;s Blog">
-<meta property="og:url" content="https://tieway59.github.io/categories/index.html">
+    <meta name="description" content="http://acm.hdu.edu.cn/showproblem.php?pid=6685 题意给一个不超过100的数组，每个元素代表价格，需要最少携带多少个，10/20/50/100面额的硬币，可以购买任意一个物品。">
+<meta name="keywords" content="贪心,想法,暴力">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hdu-6685 Rikka with Coin 贪心 想法">
+<meta property="og:url" content="https://tieway59.github.io/2019/08/19/CP/Solutions/hdu-6685-Rikka-with-Coin-贪心-想法/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="I&apos;m not hungry, neither foolish.">
+<meta property="og:description" content="http://acm.hdu.edu.cn/showproblem.php?pid=6685 题意给一个不超过100的数组，每个元素代表价格，需要最少携带多少个，10/20/50/100面额的硬币，可以购买任意一个物品。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
+<meta property="og:image" content="https://tieway59.github.io/gallery/solution.jpg">
+<meta property="og:updated_time" content="2019-08-19T12:35:20.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TieWay59&#39;s Blog">
-<meta name="twitter:description" content="I&apos;m not hungry, neither foolish.">
-<meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
+<meta name="twitter:title" content="hdu-6685 Rikka with Coin 贪心 想法">
+<meta name="twitter:description" content="http://acm.hdu.edu.cn/showproblem.php?pid=6685 题意给一个不超过100的数组，每个元素代表价格，需要最少携带多少个，10/20/50/100面额的硬币，可以购买任意一个物品。">
+<meta name="twitter:image" content="https://tieway59.github.io/gallery/solution.jpg">
 
 
 
@@ -93,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                <img src="/images/logo.svg" alt="hdu-6685 Rikka with Coin 贪心 想法" height="28">
             
             </a>
         </div>
@@ -105,7 +106,7 @@
                 
                 <a class="navbar-item" href="/archives">Archives</a>
                 
-                <a class="navbar-item is-active" href="/categories">Categories</a>
+                <a class="navbar-item" href="/categories">Categories</a>
                 
                 <a class="navbar-item" href="/tags">Tags</a>
                 
@@ -125,6 +126,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -138,59 +143,116 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6685 Rikka with Coin 贪心 想法">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-19T12:12:00.000Z">2019-08-19</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/CP/">CP</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 351 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                hdu-6685 Rikka with Coin 贪心 想法
+            
+        </h1>
+        <div class="content">
+            <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6685" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6685</a></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给一个不超过100的数组，每个元素代表价格，需要最少携带多少个，10/20/50/100面额的硬币，可以购买任意一个物品。</p>
+<a id="more"></a>
+
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>突破口是，10面额到10个，20面额到5个，50面额到2个，（因为一旦超过就可以用100面额替代更优），好像如果枚举小面额，就大概能知道100面额的有多少个了，枚举次数也才100的复杂度，那就三层for枚举吧。</p>
+<p>然后怎么算100有多少个，我是这样做的，</p>
+<p>本身再三层for枚举一下，是不是当前的硬币可以凑出当前的ai，如果ai比较大，可以i试着去掉一些100去检查。我们枚举的面额最多是220，所以先降到到200+ai%100检查一下，然后再降到100+ai%100检查一下，就可以了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-comment">//#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="hljs-comment">//#include &lt;algorithm&gt;</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> per(i, a, b) for(int i=(a);i&lt;=b;i++)</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> _debug(x) cerr&lt;&lt;#x&lt;&lt;<span class="hljs-meta-string">" = "</span>&lt;&lt;x&lt;&lt;endl</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1e5</span> + <span class="hljs-number">59</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> ll MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> ll INF = <span class="hljs-number">1e9</span> + <span class="hljs-number">59</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> kase, n, ans;</span><br><span class="line"><span class="hljs-keyword">int</span> a[<span class="hljs-number">105</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> b[<span class="hljs-number">105</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">chek</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j, <span class="hljs-keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-comment">//10 20 50;</span></span><br><span class="line">    per(_10, <span class="hljs-number">0</span>, i)</span><br><span class="line">        per(_20, <span class="hljs-number">0</span>, j)</span><br><span class="line">            per(_50, <span class="hljs-number">0</span>, k)</span><br><span class="line">                <span class="hljs-keyword">if</span> (_10 * <span class="hljs-number">10</span> + _20 * <span class="hljs-number">20</span> + _50 * <span class="hljs-number">50</span> == x)</span><br><span class="line">                    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    ios_base::sync_with_stdio(<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-built_in">cin</span>.tie(<span class="hljs-number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-built_in">cin</span> &gt;&gt; kase;</span><br><span class="line">    <span class="hljs-keyword">while</span> (kase--) &#123;</span><br><span class="line">        ans = INF;</span><br><span class="line">        <span class="hljs-built_in">cin</span> &gt;&gt; n;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i)</span><br><span class="line">            <span class="hljs-built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        per(_10, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>)</span><br><span class="line">            per(_20, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>)</span><br><span class="line">                per(_50, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>) &#123;</span><br><span class="line">                    <span class="hljs-keyword">int</span> _100 = <span class="hljs-number">0</span>;</span><br><span class="line">                    <span class="hljs-keyword">bool</span> valid = <span class="hljs-literal">true</span>;</span><br><span class="line">                    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; valid &amp;&amp; i &lt;= n; ++i) &#123;</span><br><span class="line">                        <span class="hljs-keyword">if</span> (chek(a[i], _10, _20, _50)) &#123;</span><br><span class="line">                            _100 = max(_100, <span class="hljs-number">0</span>);</span><br><span class="line">                        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a[i] &gt;= <span class="hljs-number">300</span> &amp;&amp; chek(a[i] % <span class="hljs-number">100</span> + <span class="hljs-number">200</span>, _10, _20, _50)) &#123;</span><br><span class="line">                            _100 = max(_100, a[i] / <span class="hljs-number">100</span> - <span class="hljs-number">2</span>);</span><br><span class="line">                        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a[i] &gt;= <span class="hljs-number">200</span> &amp;&amp; chek(a[i] % <span class="hljs-number">100</span> + <span class="hljs-number">100</span>, _10, _20, _50)) &#123;</span><br><span class="line">                            _100 = max(_100, a[i] / <span class="hljs-number">100</span> - <span class="hljs-number">1</span>);</span><br><span class="line">                        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a[i] &gt;= <span class="hljs-number">100</span> &amp;&amp; chek(a[i] % <span class="hljs-number">100</span>, _10, _20, _50)) &#123;</span><br><span class="line">                            _100 = max(_100, a[i] / <span class="hljs-number">100</span>);</span><br><span class="line">                        &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">                            valid = <span class="hljs-literal">false</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="hljs-keyword">if</span> (valid)</span><br><span class="line">                        ans = min(ans, _10 + _20 + _50 + _100);</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span> (ans == INF)ans = <span class="hljs-number">-1</span>;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment"></span></span><br><span class="line"><span class="hljs-comment"> */</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/想法/">想法</a>, <a class="has-link-grey -link" href="/tags/暴力/">暴力</a>, <a class="has-link-grey -link" href="/tags/贪心/">贪心</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Categories
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/CP/">
-            <span class="level-start">
-                <span class="level-item">CP</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">7</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/CP/Logs/">
-            <span class="level-start">
-                <span class="level-item">Logs</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/CP/Misc/">
-            <span class="level-start">
-                <span class="level-item">Misc</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/CP/Solutions/">
-            <span class="level-start">
-                <span class="level-item">Solutions</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Misc/">
-            <span class="level-start">
-                <span class="level-item">Misc</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">4</span>
-            </span>
-        </a></li>
-            </ul>
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/ali.png" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wc.png" alt="Wechat"></div>
+</a>
+
+                
         </div>
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/">
+                <span class="level-item">sweep line 扫描线略知略会</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
                 
 
 
@@ -292,6 +354,29 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#题意">
+        <span class="has-mr-6">1</span>
+        <span>题意</span>
+        </a></li><li>
+        <a class="is-flex" href="#思路">
+        <span class="has-mr-6">2</span>
+        <span>思路</span>
+        </a></li><li>
+        <a class="is-flex" href="#代码">
+        <span class="has-mr-6">3</span>
+        <span>代码</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -860,7 +945,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                    <img src="/images/logo.svg" alt="hdu-6685 Rikka with Coin 贪心 想法" height="28">
                 
                 </a>
                 <p class="is-size-7">
