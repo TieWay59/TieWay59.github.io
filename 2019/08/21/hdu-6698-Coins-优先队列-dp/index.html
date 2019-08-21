@@ -2,25 +2,25 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Hexo+ICARUS 使用指南与文章模板 - TieWay59&#39;s Blog</title>
+<title>hdu-6698 Coins 优先队列 dp - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="小白入门">
-<meta name="keywords" content="建站">
+    <meta name="description" content="题意给n个数对，每个对可以取两次价值，第一次取得左边的ai，第二次才可以取得右边的bi。 现在要求解2n个问题，问题i表示输出，取i次价值能获得的最大价值。">
+<meta name="keywords" content="优先队列,dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+ICARUS 使用指南与文章模板">
-<meta property="og:url" content="https://tieway59.github.io/2019/08/05/Misc/Hexo-ICARUS-使用指南与文章模板/index.html">
+<meta property="og:title" content="hdu-6698 Coins 优先队列 dp">
+<meta property="og:url" content="https://tieway59.github.io/2019/08/21/hdu-6698-Coins-优先队列-dp/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="小白入门">
+<meta property="og:description" content="题意给n个数对，每个对可以取两次价值，第一次取得左边的ai，第二次才可以取得右边的bi。 现在要求解2n个问题，问题i表示输出，取i次价值能获得的最大价值。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://tieway59.github.io/gallery/firewatch1.jpg">
-<meta property="og:updated_time" content="2019-08-09T10:51:32.533Z">
+<meta property="og:image" content="https://tieway59.github.io/gallery/solution.jpg">
+<meta property="og:updated_time" content="2019-08-21T14:30:27.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+ICARUS 使用指南与文章模板">
-<meta name="twitter:description" content="小白入门">
-<meta name="twitter:image" content="https://tieway59.github.io/gallery/firewatch1.jpg">
+<meta name="twitter:title" content="hdu-6698 Coins 优先队列 dp">
+<meta name="twitter:description" content="题意给n个数对，每个对可以取两次价值，第一次取得左边的ai，第二次才可以取得右边的bi。 现在要求解2n个问题，问题i表示输出，取i次价值能获得的最大价值。">
+<meta name="twitter:image" content="https://tieway59.github.io/gallery/solution.jpg">
 
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Hexo+ICARUS 使用指南与文章模板" height="28">
+                <img src="/images/logo.svg" alt="hdu-6698 Coins 优先队列 dp" height="28">
             
             </a>
         </div>
@@ -147,7 +147,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/gallery/firewatch1.jpg" alt="Hexo+ICARUS 使用指南与文章模板">
+            <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6698 Coins 优先队列 dp">
         </span>
     </div>
     
@@ -155,17 +155,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-05T14:05:36.000Z">2019-08-05</time>
+                <time class="level-item has-text-grey" datetime="2019-08-21T13:54:29.000Z">2019-08-21</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                <a class="has-link-grey -link" href="/categories/CP/">CP</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 407 words)
+                    8 minutes read (About 1188 words)
                 </span>
                 
                 
@@ -174,33 +174,35 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hexo+ICARUS 使用指南与文章模板
+                hdu-6698 Coins 优先队列 dp
             
         </h1>
         <div class="content">
-            <p>小白入门</p>
+            <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给n个数对，每个对可以取两次价值，第一次取得左边的ai，第二次才可以取得右边的bi。</p>
+<p>现在要求解2n个问题，问题i表示输出，取i次价值能获得的最大价值。</p>
 <a id="more"></a>
 
-<h2 id="文件头"><a href="#文件头" class="headerlink" title="文件头"></a>文件头</h2><p>以这篇文章为例，可以知道这每个文件开头面要写这些东西，设置了文件的各种信息。</p>
-<p>最好是从bash里<code>hexo new “xxx”</code> 在名字之前可以带一个模板的名字（不用引号），也可以预先准备一些写好的东西，挺方便的。</p>
-<figure class="highlight markdown hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo+ICARUS 使用指南与文章模板</span><br><span class="line">date: 2019-08-05 22:05:36</span><br><span class="line">tags:         //无顺序，单一层级</span><br><span class="line"><span class="hljs-bullet">- </span>blogsite</span><br><span class="line"><span class="hljs-bullet">- </span>postguide</span><br><span class="line">toc: true     //启用章内索引</span><br><span class="line">categories:   //有顺序，体现分类层级</span><br><span class="line"><span class="hljs-bullet">- </span>misc        </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
-<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>简单的做法是安装<a href="https://github.com/xcodebuild/hexo-asset-image" target="_blank" rel="noopener">插件</a>，</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 
-<p>Make sure <code>post_asset_folder: true</code> in your <code>_config.yml</code>.</p>
-<p>Just use <code>![logo](logo.jpg)</code> to insert <code>logo.jpg</code>.</p>
-<p><code>但是</code> 截止目前，这个插件的作者好像没有更新npm的包，所以github上的代码是最新的，我是直接下载放入<code>.\node_modules</code>路径里，才真正生效。</p>
-<h2 id="折叠文章"><a href="#折叠文章" class="headerlink" title="折叠文章"></a>折叠文章</h2><p>你会发现本样式中的文章默认在主页是不折叠的，需要在文章里写：</p>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!--more--&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我们集训队的yyj巨巨提出了非常棒的猜想。思考的方向应该是，用优先队列维护剩余的对中，还能取得的最大价值，可能第一次取左边的，也可能是第二次取右边的，由于每对数都是最多有序取两次，每次从前一个状态转移会有比较多的讨论，比如某个位置的元素有没有之前被取过，取过几次。（参考标解）<del>（好吧我不懂）</del></p>
+<p>那么假如我们把两步转移连起来看，可以归纳成两种转移，即取了两个不同位置的元素a或b各一次，或者连续两次取了相同位置的ab元素。</p>
+<p>可以大概想一下有这样的转移：<br>$$<br>dp[i]=dp[i-2]+max(node[i].v+node[j].v, node[k].a+node[k].b)<br>$$</p>
+<ul>
+<li>注意上式中ijk都代表剩下可行的位置中的最优解，也就是用优先队列贪心的。</li>
+<li>注意v代表a或者b，因为，我们之前可能单独对这个位置取过单次的，所以这里需要做一点判断。（但其实很简单）</li>
+<li>注意在这样的转移下，奇数的答案和偶数的答案可以独立转移。dp[1]显然是最大的那个a。</li>
+</ul>
+<p>上面的想法略懂即可，如果没有直接能自己敲出来也不要气，这个题确实比较难敲。</p>
+<p>下面讲一下我是如何实现的，感谢我的队友<a href>Lücy</a>帮我一起Debug。</p>
+<p>核心在于，两个优先队列维护（或者说存储），剩余可取的位置最大的价值与位置，这里我用了pair。</p>
+<p>我们有两种方案，一种是两个不同位置各取一次，一种是同一个位置取两次。</p>
+<p>第一个优先队列<code>a</code>就是为不同位置的方案服务的。但是为了防止和另一种方案产生交集，我初始化在优先队列里塞所有的a，当我使用掉某个a的时候，就把b升级成a再还回到优先队列里。这样就保证队列中所有方案都是在不同位置上的。</p>
+<p>第二个优先队列<code>ab</code>与上面类似，不过存的是<code>(ai+bi,i)</code> 。</p>
+<p>然<code>used</code>数组记录的是位置i被使用的次数，因为我们两个队列很难一次性保持统一地删元素，那么可以在取元素地时候判掉。</p>
+<p>再退回到主函数，应该容易发现奇数偶数的答案可以分别计算，只是起点不同而已，注意计算完ans[1]之后，也要模拟一次存取元素的过程。我的操作是，干脆一开始就把对应位置的，used更新了，也把初始的a变成b，这样可以复用同样的代码。</p>
+<p>可能中间有一些奇怪的操作，见谅。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span>  _debug(x) cerr&lt;&lt;#x&lt;&lt;<span class="hljs-meta-string">" = "</span>&lt;&lt;x&lt;&lt;endl</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1e5</span> + <span class="hljs-number">5</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> INF = <span class="hljs-number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> ll MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>&gt; node;</span><br><span class="line"><span class="hljs-keyword">int</span> n, q;</span><br><span class="line"><span class="hljs-keyword">int</span> kase;</span><br><span class="line">node a[MAXN];</span><br><span class="line">node ab[MAXN];</span><br><span class="line"><span class="hljs-keyword">short</span> used[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> ans[MAXN &lt;&lt; <span class="hljs-number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solv</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">  	<span class="hljs-comment">//数组转优先队列。</span></span><br><span class="line">    priority_queue&lt;node&gt; qa(a, a + n);		</span><br><span class="line">    priority_queue&lt;node&gt; qab(ab, ab + n);</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x, xi, y, yi, z, zi; i &lt;= <span class="hljs-number">2</span> * n; i += <span class="hljs-number">2</span>) &#123;</span><br><span class="line">        ans[i] = ans[i - <span class="hljs-number">2</span>];</span><br><span class="line">        z = x = y = <span class="hljs-number">-1</span>;</span><br><span class="line">        zi = xi = yi = <span class="hljs-number">-1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">while</span> (!qa.empty() &amp;&amp; used[qa.top().second] &gt;= <span class="hljs-number">2</span>)qa.pop();</span><br><span class="line">        <span class="hljs-keyword">if</span> (!qa.empty() &amp;&amp; qa.size() &gt;= <span class="hljs-number">2</span>) &#123;</span><br><span class="line">            x = qa.top().first;</span><br><span class="line">            xi = qa.top().second;</span><br><span class="line">            qa.pop();</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">while</span> (!qa.empty() &amp;&amp; used[qa.top().second] &gt;= <span class="hljs-number">2</span>)qa.pop();</span><br><span class="line">            <span class="hljs-keyword">if</span> (!qa.empty()) &#123;</span><br><span class="line">                y = qa.top().first;</span><br><span class="line">                yi = qa.top().second;</span><br><span class="line">                qa.pop();</span><br><span class="line">            &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">                qa.emplace(x, xi);</span><br><span class="line">                x = xi = <span class="hljs-number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">while</span> (!qab.empty() &amp;&amp; used[qab.top().second] &gt; <span class="hljs-number">0</span>)qab.pop();</span><br><span class="line">        <span class="hljs-keyword">if</span> (!qab.empty()) &#123;</span><br><span class="line">            z = qab.top().first;</span><br><span class="line">            zi = qab.top().second;</span><br><span class="line">            qab.pop();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> (x + y &gt; z) &#123;</span><br><span class="line">            ans[i] += x + y;</span><br><span class="line">            used[xi]++;</span><br><span class="line">            used[yi]++;</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span> (used[xi] == <span class="hljs-number">1</span>)qa.emplace(ab[xi].first - x, xi);</span><br><span class="line">            <span class="hljs-keyword">if</span> (used[yi] == <span class="hljs-number">1</span>)qa.emplace(ab[yi].first - y, yi);</span><br><span class="line">            <span class="hljs-keyword">if</span> (z != <span class="hljs-number">-1</span>)qab.emplace(z, zi);</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            ans[i] += z;</span><br><span class="line">            used[zi] += <span class="hljs-number">2</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span> (x != <span class="hljs-number">-1</span>)qa.emplace(x, xi);</span><br><span class="line">            <span class="hljs-keyword">if</span> (y != <span class="hljs-number">-1</span>)qa.emplace(y, yi);</span><br><span class="line"><span class="hljs-comment">//            if (z != -1)qa.emplace(z - a[zi].first, zi);</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;kase);</span><br><span class="line">    <span class="hljs-keyword">while</span> (kase--) &#123;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="hljs-keyword">int</span> maxx = <span class="hljs-number">0</span>, maxi = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x, y, i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line"></span><br><span class="line">            <span class="hljs-keyword">if</span> (x &gt; maxx) &#123;</span><br><span class="line">                maxx = x;</span><br><span class="line">                maxi = i;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            a[i] = &#123;x, i&#125;;</span><br><span class="line">            ab[i] = &#123;x + y, i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i)used[i] = <span class="hljs-number">0</span>;</span><br><span class="line">        solv(<span class="hljs-number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i)used[i] = <span class="hljs-number">0</span>;</span><br><span class="line">        ans[<span class="hljs-number">1</span>] = maxx;</span><br><span class="line">        a[maxi].first = ab[maxi].first - a[maxi].first;</span><br><span class="line">        used[maxi] = <span class="hljs-number">1</span>;</span><br><span class="line">        solv(<span class="hljs-number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">2</span> * n; ++i)</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d%c"</span>, ans[i], <span class="hljs-string">" \n"</span>[i == n + n]);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这样的作用代表之后的内容都会在外部折叠隐藏。（营造一种神奇的摘要的错觉）</p>
-<p>也可以加入模板，省心省事。</p>
-<h2 id="章头图片"><a href="#章头图片" class="headerlink" title="章头图片"></a>章头图片</h2><p>也就是缩略图，主要看这里</p>
-<p><a href="https://blog.zhangruipeng.me/hexo-theme-icarus/Configuration/Posts/adding-a-thumbnail-to-your-article/" target="_blank" rel="noopener">https://blog.zhangruipeng.me/hexo-theme-icarus/Configuration/Posts/adding-a-thumbnail-to-your-article/</a></p>
-<p>设置好以后，文件头里加入<code>thumbnail: ···</code>就可以了。</p>
-<h2 id="链接🔗"><a href="#链接🔗" class="headerlink" title="链接🔗"></a>链接🔗</h2><p>写链接尽量带上协议，不然会被实别成路径。</p>
-<p><code>TBCD···</code></p>
 
         </div>
         
@@ -208,7 +210,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/建站/">建站</a>
+                    <a class="has-link-grey -link" href="/tags/dp/">dp</a>, <a class="has-link-grey -link" href="/tags/优先队列/">优先队列</a>
                 </div>
             </div>
         </div>
@@ -254,13 +256,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/07/CP/Logs/2019-8-6-队内训练/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">2019.8.6 队内训练</span>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/19/CP/Solutions/hdu-6685-Rikka-with-Coin-贪心-想法/">
+                <span class="level-item">hdu-6685 Rikka with Coin 贪心 想法</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>
@@ -375,25 +377,17 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#文件头">
+        <a class="is-flex" href="#题意">
         <span class="has-mr-6">1</span>
-        <span>文件头</span>
+        <span>题意</span>
         </a></li><li>
-        <a class="is-flex" href="#插入图片">
+        <a class="is-flex" href="#思路">
         <span class="has-mr-6">2</span>
-        <span>插入图片</span>
+        <span>思路</span>
         </a></li><li>
-        <a class="is-flex" href="#折叠文章">
+        <a class="is-flex" href="#代码">
         <span class="has-mr-6">3</span>
-        <span>折叠文章</span>
-        </a></li><li>
-        <a class="is-flex" href="#章头图片">
-        <span class="has-mr-6">4</span>
-        <span>章头图片</span>
-        </a></li><li>
-        <a class="is-flex" href="#链接🔗">
-        <span class="has-mr-6">5</span>
-        <span>链接🔗</span>
+        <span>代码</span>
         </a></li></ul>
         </div>
     </div>
@@ -995,7 +989,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Hexo+ICARUS 使用指南与文章模板" height="28">
+                    <img src="/images/logo.svg" alt="hdu-6698 Coins 优先队列 dp" height="28">
                 
                 </a>
                 <p class="is-size-7">
