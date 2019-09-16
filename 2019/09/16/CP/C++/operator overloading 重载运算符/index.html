@@ -2,24 +2,23 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Qzone 相册照片链接测试 - TieWay59&#39;s Blog</title>
+<title>operator overloading 重载运算符 - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="特别鸣谢阿翔同学让我想到了这个问题。">
-<meta name="keywords" content="照片">
+    <meta name="description" content="index &amp;gt; C++ &amp;gt; Operator Overloading  有些事情好像理所当然，但是又不那么顺利。   构造器()1234567struct point &amp;#123;    int x, y;    point() &amp;#123;&amp;#125; // default constructor    point (int _x, int _y) &amp;#123;        x =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Qzone 相册照片链接测试">
-<meta property="og:url" content="https://tieway59.github.io/2019/08/09/Misc/Qzone-相册照片链接测试/index.html">
+<meta property="og:title" content="operator overloading 重载运算符">
+<meta property="og:url" content="https://tieway59.github.io/2019/09/16/CP/C++/operator overloading 重载运算符/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="特别鸣谢阿翔同学让我想到了这个问题。">
+<meta property="og:description" content="index &amp;gt; C++ &amp;gt; Operator Overloading  有些事情好像理所当然，但是又不那么顺利。   构造器()1234567struct point &amp;#123;    int x, y;    point() &amp;#123;&amp;#125; // default constructor    point (int _x, int _y) &amp;#123;        x =">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-09T10:43:12.835Z">
+<meta property="og:updated_time" content="2019-09-16T10:27:24.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Qzone 相册照片链接测试">
-<meta name="twitter:description" content="特别鸣谢阿翔同学让我想到了这个问题。">
+<meta name="twitter:title" content="operator overloading 重载运算符">
+<meta name="twitter:description" content="index &amp;gt; C++ &amp;gt; Operator Overloading  有些事情好像理所当然，但是又不那么顺利。   构造器()1234567struct point &amp;#123;    int x, y;    point() &amp;#123;&amp;#125; // default constructor    point (int _x, int _y) &amp;#123;        x =">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -94,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Qzone 相册照片链接测试" height="28">
+                <img src="/images/logo.svg" alt="operator overloading 重载运算符" height="28">
             
             </a>
         </div>
@@ -149,17 +148,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-09T04:16:52.000Z">2019-08-09</time>
+                <time class="level-item has-text-grey" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                <a class="has-link-grey -link" href="/categories/c/">c++</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 72 words)
+                    4 minutes read (About 620 words)
                 </span>
                 
                 
@@ -168,24 +167,38 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Qzone 相册照片链接测试
+                operator overloading 重载运算符
             
         </h1>
         <div class="content">
-            <p>特别鸣谢<a href="https://www.gugugu.org.cn" target="_blank" rel="noopener">阿翔同学</a>让我想到了这个问题。</p>
-<a id="more"></a>
+            <p><a href="https://blog.csdn.net/Tighway/article/details/96392868" target="_blank" rel="noopener">index</a> &gt; C++ &gt; Operator Overloading</p>
+<blockquote>
+<p>有些事情好像理所当然，但是又不那么顺利。</p>
+</blockquote>
+<hr>
+<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器()"></a>构造器()</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">point</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x, y;</span><br><span class="line">    point() &#123;&#125; <span class="hljs-comment">// default constructor</span></span><br><span class="line">    point (<span class="hljs-keyword">int</span> _x, <span class="hljs-keyword">int</span> _y) &#123;</span><br><span class="line">        x = _x; y = _y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://m.qpic.cn/psb?/V10F2gs725X1wL/ZMUbcKt6CPCaDWozhgyai2y43s1PySD.Tc.SyzFUeFA!/b/dPQAAAAAAAAA&bo=HAJ2DwAAAAARB1c!&rf=viewer_4&t=5" alt="如果这个图片挂了，说明照片的链是会定期随机的"></p>
+<p>也可以这样写：</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">point</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x, y;</span><br><span class="line">    point() &#123;&#125; <span class="hljs-comment">// default constructor</span></span><br><span class="line">    point (<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y): x(x), y(y) &#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/照片/">照片</a>
-                </div>
-            </div>
+<p><code>注* 括号里的是赋值的参数</code> 好像容易记错。</p>
+<h2 id="小于号-lt"><a href="#小于号-lt" class="headerlink" title="小于号 &lt;"></a>小于号 &lt;</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">point</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x, y;</span><br><span class="line">    <span class="hljs-comment">// overloading of &lt; operator</span></span><br><span class="line">    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span>&lt;(<span class="hljs-keyword">const</span> point &amp;rhs) <span class="hljs-keyword">const</span>&#123;</span><br><span class="line">        <span class="hljs-comment">// your main logic for the comparator goes here</span></span><br><span class="line">        <span class="hljs-keyword">return</span> make_pair(x,y) &lt; make_pair(rhs.x, rhs.y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>请要小心<strong>弱比较</strong>的特性（<a href="https://www.cnblogs.com/walkerlala/p/5561339.html" target="_blank" rel="noopener">C++: Strict Weak Ordering</a>），肯定有人疑惑过为什么只要定义一个小于号。因为对三种大小关系可以只用一个来实现，只不过等于的状态要比较两次，比如<code>a&lt;b</code>和<code>b&lt;a</code>结果都为假，那么就判断为两者相等。</p>
+<p>如果你在定义严格小的过程中，误用了等号，会导致难以预料的结果。而且很可能自己测试对了，某些样例过不了。</p>
+<p>可以这样去理解：如果满足条件的时候，本身这个元素，一定放在另外一个元素之前，则这个条件要返还真。</p>
+<p>可能有人会觉得<code>) const {</code>这个孤零零的很奇怪，但是这个是必要的语法结构。尤其是在被用于map或者优先队列之类key的时候。</p>
+<h2 id="lt-lt"><a href="#lt-lt" class="headerlink" title="&lt;&lt;"></a>&lt;&lt;</h2><p><code>注* 必须要全局函数的形式（原理暂略）</code><br><a href="https://www.cnblogs.com/yangguang-it/p/6489550.html" target="_blank" rel="noopener">reference</a></p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-keyword">friend</span> ostream &amp; <span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;out,node &amp;T);</span><br><span class="line">&#125;;</span><br><span class="line">ostream &amp; <span class="hljs-keyword">operator</span> &lt;&lt; (ostream &amp;out,node &amp;T)&#123;</span><br><span class="line">    out&lt;&lt;T.x&lt;&lt;<span class="hljs-string">" "</span>&lt;&lt;T.y;</span><br><span class="line">    <span class="hljs-keyword">return</span> out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="普通"><a href="#普通" class="headerlink" title="普通()"></a>普通()</h2><p>好像是有括号的计算是需要的（未证实）</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function">node <span class="hljs-title">operator</span> <span class="hljs-params">()</span><span class="hljs-params">(<span class="hljs-keyword">const</span> node &amp;T)</span></span>&#123;<span class="hljs-keyword">return</span> T;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    node ():x(<span class="hljs-number">0</span>),y(<span class="hljs-number">0</span>)&#123;&#125;</span><br><span class="line">    node (<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y):x(x),y(y)&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">len</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> x*x+y*y;&#125;</span><br><span class="line">    node <span class="hljs-keyword">operator</span> - (<span class="hljs-keyword">const</span> node &amp;T)&#123;<span class="hljs-keyword">return</span> node(x-T.x,y-T.y);&#125;</span><br><span class="line">    node <span class="hljs-keyword">operator</span> + (<span class="hljs-keyword">const</span> node &amp;T)&#123;<span class="hljs-keyword">return</span> node(x+T.x,y+T.y);&#125;</span><br><span class="line">    <span class="hljs-keyword">int</span> <span class="hljs-keyword">operator</span> * (<span class="hljs-keyword">const</span> node &amp;T)&#123;<span class="hljs-keyword">return</span> x*T.x+y*T.y;&#125;</span><br><span class="line">    <span class="hljs-keyword">int</span> <span class="hljs-keyword">operator</span> / (<span class="hljs-keyword">const</span> node &amp;T)&#123;<span class="hljs-keyword">return</span> x*T.y-y*T.x;&#125;<span class="hljs-comment">//叉积</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>一般都是在坐标运算，或者比较特殊的模拟的时候需要用到这些。<br><a href="https://codeforces.com/problemset/problem/136/D" target="_blank" rel="noopener">CodeForces - 136D </a> :: <a href="http://fastvj.rainng.com/solution/18801502" target="_blank" rel="noopener">Mine</a> :: <a href="http://fastvj.rainng.com/solution/18801502" target="_blank" rel="noopener">Dalao</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://codeforces.com/blog/entry/9604" target="_blank" rel="noopener">Using Constructors and comparison function in C++ </a> By <a href="https://codeforces.com/profile/PraveenDhinwa" target="_blank" rel="noopener">PraveenDhinwa</a></p>
+
         </div>
         
         
@@ -230,16 +243,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/16/CP/C++/common-sense/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">contest-888-A 单调栈 前缀</span>
+                <span class="level-item">common sense</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/09/Misc/Github没计绿点的问题/">
-                <span class="level-item">Github没计绿点的问题</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/">
+                <span class="level-item">random 伪随机，与更好的伪随机</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -356,7 +369,35 @@
             <h3 class="menu-label">
                 Catalogue
             </h3>
-            
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#构造器">
+        <span class="has-mr-6">1</span>
+        <span>构造器()</span>
+        </a></li><li>
+        <a class="is-flex" href="#小于号-lt">
+        <span class="has-mr-6">2</span>
+        <span>小于号 &lt;</span>
+        </a></li><li>
+        <a class="is-flex" href="#lt-lt">
+        <span class="has-mr-6">3</span>
+        <span>&lt;&lt;</span>
+        </a></li><li>
+        <a class="is-flex" href="#普通">
+        <span class="has-mr-6">4</span>
+        <span>普通()</span>
+        </a></li><li>
+        <a class="is-flex" href="#计算">
+        <span class="has-mr-6">5</span>
+        <span>计算</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题">
+        <span class="has-mr-6">6</span>
+        <span>例题</span>
+        </a></li><li>
+        <a class="is-flex" href="#参考">
+        <span class="has-mr-6">7</span>
+        <span>参考</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -1015,7 +1056,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Qzone 相册照片链接测试" height="28">
+                    <img src="/images/logo.svg" alt="operator overloading 重载运算符" height="28">
                 
                 </a>
                 <p class="is-size-7">

@@ -2,24 +2,23 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Qzone 相册照片链接测试 - TieWay59&#39;s Blog</title>
+<title>unordered_map - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="特别鸣谢阿翔同学让我想到了这个问题。">
-<meta name="keywords" content="照片">
+    <meta name="description" content="index &amp;gt; STL &amp;gt; unordered_map  简介内部实现哈希的map，相对于一般map来说，理论上更快。 应用基本和普通map类似，甚至有时候会让人觉得unordered_map更符合我们的需求，因为我们unordered_map的修改查询很快，但遍历很慢，一般我们开map也不用到遍历。 unordered_map对key的要求是需要实现其哈希过程，默认的哈希支持整数类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Qzone 相册照片链接测试">
-<meta property="og:url" content="https://tieway59.github.io/2019/08/09/Misc/Qzone-相册照片链接测试/index.html">
+<meta property="og:title" content="unordered_map">
+<meta property="og:url" content="https://tieway59.github.io/2019/09/16/CP/C++/unordered_map/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="特别鸣谢阿翔同学让我想到了这个问题。">
+<meta property="og:description" content="index &amp;gt; STL &amp;gt; unordered_map  简介内部实现哈希的map，相对于一般map来说，理论上更快。 应用基本和普通map类似，甚至有时候会让人觉得unordered_map更符合我们的需求，因为我们unordered_map的修改查询很快，但遍历很慢，一般我们开map也不用到遍历。 unordered_map对key的要求是需要实现其哈希过程，默认的哈希支持整数类型">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-09T10:43:12.835Z">
+<meta property="og:updated_time" content="2019-09-16T10:28:45.185Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Qzone 相册照片链接测试">
-<meta name="twitter:description" content="特别鸣谢阿翔同学让我想到了这个问题。">
+<meta name="twitter:title" content="unordered_map">
+<meta name="twitter:description" content="index &amp;gt; STL &amp;gt; unordered_map  简介内部实现哈希的map，相对于一般map来说，理论上更快。 应用基本和普通map类似，甚至有时候会让人觉得unordered_map更符合我们的需求，因为我们unordered_map的修改查询很快，但遍历很慢，一般我们开map也不用到遍历。 unordered_map对key的要求是需要实现其哈希过程，默认的哈希支持整数类型">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -94,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Qzone 相册照片链接测试" height="28">
+                <img src="/images/logo.svg" alt="unordered_map" height="28">
             
             </a>
         </div>
@@ -149,17 +148,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-09T04:16:52.000Z">2019-08-09</time>
+                <time class="level-item has-text-grey" datetime="2019-09-16T10:14:12.000Z">2019-09-16</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                <a class="has-link-grey -link" href="/categories/c/">c++</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 72 words)
+                    3 minutes read (About 462 words)
                 </span>
                 
                 
@@ -168,24 +167,26 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Qzone 相册照片链接测试
+                unordered_map
             
         </h1>
         <div class="content">
-            <p>特别鸣谢<a href="https://www.gugugu.org.cn" target="_blank" rel="noopener">阿翔同学</a>让我想到了这个问题。</p>
-<a id="more"></a>
+            <p><a href="https://blog.csdn.net/Tighway/article/details/96392868" target="_blank" rel="noopener">index</a> &gt; STL &gt; unordered_map</p>
+<hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>内部实现哈希的map，相对于一般map来说，理论上更快。</p>
+<p>应用基本和普通map类似，甚至有时候会让人觉得unordered_map更符合我们的需求，因为我们unordered_map的修改查询很快，但遍历很慢，一般我们开map也不用到遍历。</p>
+<p>unordered_map对key的要求是需要实现其哈希过程，默认的哈希支持整数类型的key。</p>
+<h2 id="缺陷与改进"><a href="#缺陷与改进" class="headerlink" title="缺陷与改进"></a>缺陷与改进</h2><p>理论上更快的，但有例外，而且很可能会影响到一些特定样例的运行时间。</p>
+<p>因为一般的编译器，给unordered_map默认的哈希表是固定的，当然细节挺复杂，详细可以看参考里的那篇博客。</p>
+<p>笔者就说一个很简陋的理解：</p>
+<p>默认的哈希在处理冲突的时候，是借助固定的哈希表来偏移的，冲突越多需要的时间越多。当有针对性地hack时，最差会退化成$O(N^2)$ 的过程。</p>
+<p>为了解决这个问题，一般都会自写哈希过程， 下面是大佬的优秀实现：</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">custom_hash</span> &#123;</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">static</span> uint64_t <span class="hljs-title">splitmix64</span><span class="hljs-params">(<span class="hljs-keyword">uint64_t</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// http://xorshift.di.unimi.it/splitmix64.c</span></span><br><span class="line">        x += <span class="hljs-number">0x9e3779b97f4a7c15</span>;</span><br><span class="line">        x = (x ^ (x &gt;&gt; <span class="hljs-number">30</span>)) * <span class="hljs-number">0xbf58476d1ce4e5b9</span>;</span><br><span class="line">        x = (x ^ (x &gt;&gt; <span class="hljs-number">27</span>)) * <span class="hljs-number">0x94d049bb133111eb</span>;</span><br><span class="line">        <span class="hljs-keyword">return</span> x ^ (x &gt;&gt; <span class="hljs-number">31</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">size_t</span> <span class="hljs-keyword">operator</span>()(<span class="hljs-keyword">uint64_t</span> x) <span class="hljs-keyword">const</span> &#123;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">uint64_t</span> FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();</span><br><span class="line">        <span class="hljs-keyword">return</span> splitmix64(x + FIXED_RANDOM);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">unordered_map</span>&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>, <span class="hljs-keyword">int</span>, custom_hash&gt; safe_map;</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://m.qpic.cn/psb?/V10F2gs725X1wL/ZMUbcKt6CPCaDWozhgyai2y43s1PySD.Tc.SyzFUeFA!/b/dPQAAAAAAAAA&bo=HAJ2DwAAAAARB1c!&rf=viewer_4&t=5" alt="如果这个图片挂了，说明照片的链是会定期随机的"></p>
+<p>可以说，哈希得更好，能提高性能。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://codeforces.com/blog/entry/62393" target="_blank" rel="noopener">Blowing up unordered_map, and how to stop getting hacked on it</a> by <a href="https://codeforces.com/profile/neal" target="_blank" rel="noopener">neal</a></p>
+<p><a href="https://codeforces.com/blog/entry/60737" target="_blank" rel="noopener">C++ STL: Order of magnitude faster hash tables with Policy Based Data Structures</a> by <a href="https://codeforces.com/profile/Chilli" target="_blank" rel="noopener">Chilli</a></p>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/照片/">照片</a>
-                </div>
-            </div>
         </div>
         
         
@@ -230,16 +231,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/16/CP/C++/sort 排序/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">contest-888-A 单调栈 前缀</span>
+                <span class="level-item">sort 排序</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/09/Misc/Github没计绿点的问题/">
-                <span class="level-item">Github没计绿点的问题</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/">
+                <span class="level-item">jsk-41402 ICPC Shenyang Pre E</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -356,7 +357,19 @@
             <h3 class="menu-label">
                 Catalogue
             </h3>
-            
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#简介">
+        <span class="has-mr-6">1</span>
+        <span>简介</span>
+        </a></li><li>
+        <a class="is-flex" href="#缺陷与改进">
+        <span class="has-mr-6">2</span>
+        <span>缺陷与改进</span>
+        </a></li><li>
+        <a class="is-flex" href="#参考">
+        <span class="has-mr-6">3</span>
+        <span>参考</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -1015,7 +1028,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Qzone 相册照片链接测试" height="28">
+                    <img src="/images/logo.svg" alt="unordered_map" height="28">
                 
                 </a>
                 <p class="is-size-7">

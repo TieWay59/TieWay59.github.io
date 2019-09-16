@@ -2,24 +2,23 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Qzone 相册照片链接测试 - TieWay59&#39;s Blog</title>
+<title>sort 排序 - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="特别鸣谢阿翔同学让我想到了这个问题。">
-<meta name="keywords" content="照片">
+    <meta name="description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt; b.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Qzone 相册照片链接测试">
-<meta property="og:url" content="https://tieway59.github.io/2019/08/09/Misc/Qzone-相册照片链接测试/index.html">
+<meta property="og:title" content="sort 排序">
+<meta property="og:url" content="https://tieway59.github.io/2019/09/16/CP/C++/sort 排序/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="特别鸣谢阿翔同学让我想到了这个问题。">
+<meta property="og:description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt; b.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-09T10:43:12.835Z">
+<meta property="og:updated_time" content="2019-09-16T10:28:04.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Qzone 相册照片链接测试">
-<meta name="twitter:description" content="特别鸣谢阿翔同学让我想到了这个问题。">
+<meta name="twitter:title" content="sort 排序">
+<meta name="twitter:description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt; b.">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -94,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Qzone 相册照片链接测试" height="28">
+                <img src="/images/logo.svg" alt="sort 排序" height="28">
             
             </a>
         </div>
@@ -149,17 +148,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-09T04:16:52.000Z">2019-08-09</time>
+                <time class="level-item has-text-grey" datetime="2019-09-16T10:14:32.000Z">2019-09-16</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                <a class="has-link-grey -link" href="/categories/c/">c++</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 72 words)
+                    a few seconds read (About 98 words)
                 </span>
                 
                 
@@ -168,24 +167,16 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Qzone 相册照片链接测试
+                sort 排序
             
         </h1>
         <div class="content">
-            <p>特别鸣谢<a href="https://www.gugugu.org.cn" target="_blank" rel="noopener">阿翔同学</a>让我想到了这个问题。</p>
-<a id="more"></a>
+            <h2 id="std-sort"><a href="#std-sort" class="headerlink" title="std::sort"></a>std::sort</h2><p>在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。<del>同时渐渐忘记如何写快排</del></p>
+<p>甚至一种少见（某种程度上很合理）的内联写法<code>c++11</code>：</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sort(A.begin(), A.end(), [](<span class="hljs-keyword">const</span> Type&amp; a, <span class="hljs-keyword">const</span> Type&amp; b) &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> a.day &lt; b.day;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://m.qpic.cn/psb?/V10F2gs725X1wL/ZMUbcKt6CPCaDWozhgyai2y43s1PySD.Tc.SyzFUeFA!/b/dPQAAAAAAAAA&bo=HAJ2DwAAAAARB1c!&rf=viewer_4&t=5" alt="如果这个图片挂了，说明照片的链是会定期随机的"></p>
+<p>tbcd…</p>
 
-        </div>
-        
-        <div class="level is-size-7 is-uppercase">
-            <div class="level-start">
-                <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/照片/">照片</a>
-                </div>
-            </div>
         </div>
         
         
@@ -230,16 +221,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/11/CP/Solutions/contest-888-A-单调栈-前缀/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/16/CP/C++/map/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">contest-888-A 单调栈 前缀</span>
+                <span class="level-item">map</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/09/Misc/Github没计绿点的问题/">
-                <span class="level-item">Github没计绿点的问题</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/16/CP/C++/unordered_map/">
+                <span class="level-item">unordered_map</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -356,7 +347,11 @@
             <h3 class="menu-label">
                 Catalogue
             </h3>
-            
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#std-sort">
+        <span class="has-mr-6">1</span>
+        <span>std::sort</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -1015,7 +1010,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Qzone 相册照片链接测试" height="28">
+                    <img src="/images/logo.svg" alt="sort 排序" height="28">
                 
                 </a>
                 <p class="is-size-7">
