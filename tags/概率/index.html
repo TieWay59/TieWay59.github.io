@@ -2,24 +2,22 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Github没计绿点的问题 - TieWay59&#39;s Blog</title>
+<title>Tag: 概率 - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="详细问题见：Github为什么没有记录你的Contributions">
-<meta name="keywords" content="github">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Github没计绿点的问题">
-<meta property="og:url" content="https://tieway59.github.io/2019/08/09/Github没计绿点的问题/index.html">
+    <meta name="description" content="I&apos;m not hungry, neither foolish.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TieWay59&#39;s Blog">
+<meta property="og:url" content="https://tieway59.github.io/tags/概率/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="详细问题见：Github为什么没有记录你的Contributions">
+<meta property="og:description" content="I&apos;m not hungry, neither foolish.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-08-09T02:03:01.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Github没计绿点的问题">
-<meta name="twitter:description" content="详细问题见：Github为什么没有记录你的Contributions">
+<meta name="twitter:title" content="TieWay59&#39;s Blog">
+<meta name="twitter:description" content="I&apos;m not hungry, neither foolish.">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -94,7 +92,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Github没计绿点的问题" height="28">
+                <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
             
             </a>
         </div>
@@ -126,10 +124,6 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -144,22 +138,39 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">概率</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/" class="image is-7by1">
+            <img class="thumbnail" src="/gallery/solution.jpg" alt="jsk-41402 ICPC Shenyang Pre E">
+        </a>
+    </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-09T01:57:08.000Z">2019-08-09</time>
+                <time class="level-item has-text-grey" datetime="2019-09-16T05:04:27.000Z">2019-09-16</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                <a class="has-link-grey -link" href="/categories/CP/">CP</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 61 words)
+                    4 minutes read (About 597 words)
                 </span>
                 
                 
@@ -168,76 +179,35 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Github没计绿点的问题
+                <a class="has-link-black-ter" href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/">jsk-41402 ICPC Shenyang Pre E</a>
             
         </h1>
         <div class="content">
-            <p>详细问题见：<a href="https://www.cnblogs.com/cheko/p/6623437.html" target="_blank" rel="noopener">Github为什么没有记录你的Contributions</a> </p>
-<a id="more"></a>
-<p>我的问题就是本地git的账号和github的不一样，在下面这个页面插入即可。<br><a href="https://github.com/settings/emails" target="_blank" rel="noopener">https://github.com/settings/emails</a></p>
-
+            <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p><a href="https://nanti.jisuanke.com/t/41402" target="_blank" rel="noopener">link</a></p>
+<p>给一个图，有些点是坏的，有些点是好的。主角自由行动，但会有意识地尽量走多的好点。</p>
+<p>每个好点可以取走一个收益，第一次访问到坏点，会等概率跳到与之相邻的某一点。</p>
+<p>注意第二次走到坏点就直接结束过程，或者没有更多收益的时候，可以主动结束过程。</p>
+<p>起点是1，求收益的期望。</p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/github/">github</a>
+                <a class="button is-size-7 is-light" href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/#more">Read More</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>Alipay</span>
-    <div class="qrcode"><img src="/images/ali.png" alt="Alipay"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>Wechat</span>
-    <div class="qrcode"><img src="/images/wc.png" alt="Wechat"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/08/Misc/临时笔记栈/">
-                <span class="level-item">临时笔记栈</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
 </div>
@@ -285,7 +255,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        13
                     </p>
                 </div>
             </div>
@@ -295,7 +265,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -305,7 +275,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        14
                     </p>
                 </div>
             </div>
@@ -324,7 +294,7 @@
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="Weibo" href="https://weibo.com/p/1005052063921593">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Weibo" href="https://weibo.com/u/6771232128">
                 
                 <i class="fab fa-weibo"></i>
                 
@@ -342,17 +312,6 @@
 </div>
     
         
-<div class="card widget" id="toc">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Catalogue
-            </h3>
-            
-        </div>
-    </div>
-</div>
-
     
         
 
@@ -387,12 +346,12 @@
             </li>
         
             <li>
-                <a class="level is-mobile" href="https://weibo.com/p/1005052063921593" target="_blank">
+                <a class="level is-mobile" href="https://www.gugugu.org.cn" target="_blank">
                     <span class="level-left">
-                        <span class="level-item">MyWeibo</span>
+                        <span class="level-item">YTX</span>
                     </span>
                     <span class="level-right">
-                        <span class="level-item tag">weibo.com</span>
+                        <span class="level-item tag">www.gugugu.org.cn</span>
                     </span>
                 </a>
             </li>
@@ -418,7 +377,7 @@
                 <span class="level-item">CP</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">9</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/CP/Logs/">
@@ -426,7 +385,15 @@
                 <span class="level-item">Logs</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/CP/Misc/">
+            <span class="level-start">
+                <span class="level-item">Misc</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/CP/Solutions/">
@@ -434,7 +401,7 @@
                 <span class="level-item">Solutions</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Misc/">
@@ -442,7 +409,7 @@
                 <span class="level-item">Misc</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li>
             </ul>
@@ -456,7 +423,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hdu/" style="font-size: 10px;">hdu</a> <a href="/tags/建站/" style="font-size: 10px;">建站</a> <a href="/tags/线段树/" style="font-size: 10px;">线段树</a>
+        <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hdu/" style="font-size: 10px;">hdu</a> <a href="/tags/优先队列/" style="font-size: 10px;">优先队列</a> <a href="/tags/前缀和/" style="font-size: 10px;">前缀和</a> <a href="/tags/单调栈/" style="font-size: 10px;">单调栈</a> <a href="/tags/图论/" style="font-size: 10px;">图论</a> <a href="/tags/建站/" style="font-size: 10px;">建站</a> <a href="/tags/想法/" style="font-size: 20px;">想法</a> <a href="/tags/暴力/" style="font-size: 10px;">暴力</a> <a href="/tags/概率/" style="font-size: 10px;">概率</a> <a href="/tags/照片/" style="font-size: 10px;">照片</a> <a href="/tags/线段树/" style="font-size: 10px;">线段树</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a>
     </div>
 </div>
 
@@ -473,73 +440,16 @@
         
         <article class="media">
             
-            <a href="/2019/08/09/Github没计绿点的问题/" class="media-left">
+            <a href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Github没计绿点的问题">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="jsk-41402 ICPC Shenyang Pre E">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T01:57:08.000Z">2019-08-09</time></div>
-                    <a href="/2019/08/09/Github没计绿点的问题/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Github没计绿点的问题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/08/Misc/临时笔记栈/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/firewatch2.jpg" alt="临时笔记栈">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T14:41:13.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/Misc/临时笔记栈/" class="title has-link-black-ter is-size-6 has-text-weight-normal">临时笔记栈</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/08/CP/Logs/2019-8-8-牛客多校第七场/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.8 牛客多校第七场">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T13:57:17.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/CP/Logs/2019-8-8-牛客多校第七场/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.8 牛客多校第七场</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/08/CP/Solutions/hdu-6638-线段树-最大子段和/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6638 线段树 最大子段和">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T11:56:20.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/CP/Solutions/hdu-6638-线段树-最大子段和/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6638 线段树 最大子段和</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T05:04:27.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/" class="title has-link-black-ter is-size-6 has-text-weight-normal">jsk-41402 ICPC Shenyang Pre E</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
                     </p>
@@ -549,16 +459,73 @@
         
         <article class="media">
             
-            <a href="/2019/08/07/CP/Logs/2019-8-6-队内训练/" class="media-left">
+            <a href="/2019/08/21/hdu-6698-Coins-优先队列-dp/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.6 队内训练">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6698 Coins 优先队列 dp">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T08:51:58.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/07/CP/Logs/2019-8-6-队内训练/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.6 队内训练</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T13:54:29.000Z">2019-08-21</time></div>
+                    <a href="/2019/08/21/hdu-6698-Coins-优先队列-dp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6698 Coins 优先队列 dp</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/19/CP/Solutions/hdu-6685-Rikka-with-Coin-贪心-想法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6685 Rikka with Coin 贪心 想法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-19T12:12:00.000Z">2019-08-19</time></div>
+                    <a href="/2019/08/19/CP/Solutions/hdu-6685-Rikka-with-Coin-贪心-想法/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6685 Rikka with Coin 贪心 想法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="sweep line 扫描线略知略会">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-16T13:56:51.000Z">2019-08-16</time></div>
+                    <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sweep line 扫描线略知略会</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.12 杭电多校第七场">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-12T14:11:21.000Z">2019-08-12</time></div>
+                    <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.12 杭电多校第七场</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
                     </p>
@@ -579,12 +546,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -603,6 +581,13 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/dp/">
+                        <span class="tag">dp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/github/">
                         <span class="tag">github</span>
                         <span class="tag is-grey">1</span>
@@ -617,6 +602,34 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/优先队列/">
+                        <span class="tag">优先队列</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前缀和/">
+                        <span class="tag">前缀和</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/图论/">
+                        <span class="tag">图论</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/建站/">
                         <span class="tag">建站</span>
                         <span class="tag is-grey">1</span>
@@ -624,8 +637,43 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/想法/">
+                        <span class="tag">想法</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/暴力/">
+                        <span class="tag">暴力</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/概率/">
+                        <span class="tag">概率</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/照片/">
+                        <span class="tag">照片</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/线段树/">
                         <span class="tag">线段树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/贪心/">
+                        <span class="tag">贪心</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -655,73 +703,16 @@
         
         <article class="media">
             
-            <a href="/2019/08/09/Github没计绿点的问题/" class="media-left">
+            <a href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Github没计绿点的问题">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="jsk-41402 ICPC Shenyang Pre E">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-09T01:57:08.000Z">2019-08-09</time></div>
-                    <a href="/2019/08/09/Github没计绿点的问题/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Github没计绿点的问题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/08/Misc/临时笔记栈/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/firewatch2.jpg" alt="临时笔记栈">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T14:41:13.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/Misc/临时笔记栈/" class="title has-link-black-ter is-size-6 has-text-weight-normal">临时笔记栈</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/08/CP/Logs/2019-8-8-牛客多校第七场/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.8 牛客多校第七场">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T13:57:17.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/CP/Logs/2019-8-8-牛客多校第七场/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.8 牛客多校第七场</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/08/08/CP/Solutions/hdu-6638-线段树-最大子段和/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6638 线段树 最大子段和">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-08T11:56:20.000Z">2019-08-08</time></div>
-                    <a href="/2019/08/08/CP/Solutions/hdu-6638-线段树-最大子段和/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6638 线段树 最大子段和</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T05:04:27.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/Solutions/jsk-41402-ICPC-Shenyang-Pre-E/" class="title has-link-black-ter is-size-6 has-text-weight-normal">jsk-41402 ICPC Shenyang Pre E</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
                     </p>
@@ -731,16 +722,73 @@
         
         <article class="media">
             
-            <a href="/2019/08/07/CP/Logs/2019-8-6-队内训练/" class="media-left">
+            <a href="/2019/08/21/hdu-6698-Coins-优先队列-dp/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.6 队内训练">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6698 Coins 优先队列 dp">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-07T08:51:58.000Z">2019-08-07</time></div>
-                    <a href="/2019/08/07/CP/Logs/2019-8-6-队内训练/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.6 队内训练</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-21T13:54:29.000Z">2019-08-21</time></div>
+                    <a href="/2019/08/21/hdu-6698-Coins-优先队列-dp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6698 Coins 优先队列 dp</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/19/CP/Solutions/hdu-6685-Rikka-with-Coin-贪心-想法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6685 Rikka with Coin 贪心 想法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-19T12:12:00.000Z">2019-08-19</time></div>
+                    <a href="/2019/08/19/CP/Solutions/hdu-6685-Rikka-with-Coin-贪心-想法/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6685 Rikka with Coin 贪心 想法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/solution.jpg" alt="sweep line 扫描线略知略会">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-16T13:56:51.000Z">2019-08-16</time></div>
+                    <a href="/2019/08/16/CP/Misc/sweep-line-扫描线略知略会/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sweep line 扫描线略知略会</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Misc/">Misc</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.12 杭电多校第七场">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-12T14:11:21.000Z">2019-08-12</time></div>
+                    <a href="/2019/08/12/2019-8-12-杭电多校第七场/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.12 杭电多校第七场</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
                     </p>
@@ -761,12 +809,23 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
                     <span class="level-item">August 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -785,6 +844,13 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/dp/">
+                        <span class="tag">dp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/github/">
                         <span class="tag">github</span>
                         <span class="tag is-grey">1</span>
@@ -799,6 +865,34 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/优先队列/">
+                        <span class="tag">优先队列</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/前缀和/">
+                        <span class="tag">前缀和</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/图论/">
+                        <span class="tag">图论</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/建站/">
                         <span class="tag">建站</span>
                         <span class="tag is-grey">1</span>
@@ -806,8 +900,43 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/想法/">
+                        <span class="tag">想法</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/暴力/">
+                        <span class="tag">暴力</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/概率/">
+                        <span class="tag">概率</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/照片/">
+                        <span class="tag">照片</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/线段树/">
                         <span class="tag">线段树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/贪心/">
+                        <span class="tag">贪心</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -829,7 +958,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Github没计绿点的问题" height="28">
+                    <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
                 
                 </a>
                 <p class="is-size-7">
