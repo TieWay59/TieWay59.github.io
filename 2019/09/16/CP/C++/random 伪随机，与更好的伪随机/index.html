@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="index &amp;gt; STL &amp;gt; random   主要内容如果支持C++11的话，就像下面这样写随机数： (下面两个写法都表示得到一个$[0,10]$的int型随机数) 123456789101112131415161718#include &amp;lt;chrono&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;random&amp;gt;using namespa">
+    <meta name="description" content="index &amp;gt; STL &amp;gt; random">
 <meta property="og:type" content="article">
 <meta property="og:title" content="random 伪随机，与更好的伪随机">
 <meta property="og:url" content="https://tieway59.github.io/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="index &amp;gt; STL &amp;gt; random   主要内容如果支持C++11的话，就像下面这样写随机数： (下面两个写法都表示得到一个$[0,10]$的int型随机数) 123456789101112131415161718#include &amp;lt;chrono&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;random&amp;gt;using namespa">
+<meta property="og:description" content="index &amp;gt; STL &amp;gt; random">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-16T10:26:24.944Z">
+<meta property="og:updated_time" content="2019-09-16T10:33:45.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="random 伪随机，与更好的伪随机">
-<meta name="twitter:description" content="index &amp;gt; STL &amp;gt; random   主要内容如果支持C++11的话，就像下面这样写随机数： (下面两个写法都表示得到一个$[0,10]$的int型随机数) 123456789101112131415161718#include &amp;lt;chrono&amp;gt;#include &amp;lt;iostream&amp;gt;#include &amp;lt;random&amp;gt;using namespa">
+<meta name="twitter:description" content="index &amp;gt; STL &amp;gt; random">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 491 words)
+                    3 minutes read (About 492 words)
                 </span>
                 
                 
@@ -173,6 +173,8 @@
         <div class="content">
             <p><a href="https://blog.csdn.net/Tighway/article/details/96392868" target="_blank" rel="noopener">index</a> &gt; STL &gt; random </p>
 <hr>
+<a id="more"></a>
+
 <h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><p>如果支持<code>C++11</code>的话，就像下面这样写随机数：</p>
 <p>(下面两个写法都表示得到一个$[0,10]$的int型随机数)</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;random&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function">mt19937 <span class="hljs-title">rng</span><span class="hljs-params">(chrono::steady_clock::now().time_since_epoch().count())</span></span>;</span><br><span class="line">    <span class="hljs-comment">//minstd_rand rng(chrono::steady_clock::now().time_since_epoch().count());</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) &#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; uniform_int_distribution&lt;<span class="hljs-keyword">int</span>&gt;(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)(rng) &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    uniform_int_distribution&lt;<span class="hljs-keyword">int</span>&gt; u(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) &#123;</span><br><span class="line">        <span class="hljs-built_in">cout</span> &lt;&lt; u(rng) &lt;&lt; <span class="hljs-built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -237,16 +239,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/16/CP/C++/operator overloading 重载运算符/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/16/CP/C++/common-sense/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">operator overloading 重载运算符</span>
+                <span class="level-item">common sense</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/16/CP/C++/map/">
-                <span class="level-item">map</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/16/CP/C++/operator overloading 重载运算符/">
+                <span class="level-item">operator overloading 重载运算符</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -535,25 +537,6 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="random 伪随机，与更好的伪随机">
@@ -564,6 +547,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
                     <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="title has-link-black-ter is-size-6 has-text-weight-normal">random 伪随机，与更好的伪随机</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/c/">c++</a>
                     </p>
@@ -798,25 +800,6 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="random 伪随机，与更好的伪随机">
@@ -827,6 +810,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
                     <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="title has-link-black-ter is-size-6 has-text-weight-normal">random 伪随机，与更好的伪随机</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/c/">c++</a>
                     </p>

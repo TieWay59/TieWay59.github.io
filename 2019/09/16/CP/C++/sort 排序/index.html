@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt; b.">
+    <meta name="description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sort 排序">
 <meta property="og:url" content="https://tieway59.github.io/2019/09/16/CP/C++/sort 排序/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt; b.">
+<meta property="og:description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt;">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-16T10:28:04.584Z">
+<meta property="og:updated_time" content="2019-09-16T10:33:56.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sort 排序">
-<meta name="twitter:description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt; b.">
+<meta name="twitter:description" content="std::sort在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。同时渐渐忘记如何写快排 甚至一种少见（某种程度上很合理）的内联写法c++11： 123sort(A.begin(), A.end(), [](const Type&amp;amp; a, const Type&amp;amp; b) &amp;#123;    return a.day &amp;lt;">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 98 words)
+                    a few seconds read (About 99 words)
                 </span>
                 
                 
@@ -171,7 +171,9 @@
             
         </h1>
         <div class="content">
-            <h2 id="std-sort"><a href="#std-sort" class="headerlink" title="std::sort"></a>std::sort</h2><p>在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。<del>同时渐渐忘记如何写快排</del></p>
+            <a id="more"></a>
+
+<h2 id="std-sort"><a href="#std-sort" class="headerlink" title="std::sort"></a>std::sort</h2><p>在漫长的CP岁月中，你可能会学会各种各样的利用std::sort的方法，比如重载运算符，或者写比较函数。<del>同时渐渐忘记如何写快排</del></p>
 <p>甚至一种少见（某种程度上很合理）的内联写法<code>c++11</code>：</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sort(A.begin(), A.end(), [](<span class="hljs-keyword">const</span> Type&amp; a, <span class="hljs-keyword">const</span> Type&amp; b) &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> a.day &lt; b.day;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
 
@@ -511,25 +513,6 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="random 伪随机，与更好的伪随机">
@@ -540,6 +523,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
                     <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="title has-link-black-ter is-size-6 has-text-weight-normal">random 伪随机，与更好的伪随机</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/c/">c++</a>
                     </p>
@@ -774,25 +776,6 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="random 伪随机，与更好的伪随机">
@@ -803,6 +786,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
                     <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="title has-link-black-ter is-size-6 has-text-weight-normal">random 伪随机，与更好的伪随机</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/c/">c++</a>
                     </p>
