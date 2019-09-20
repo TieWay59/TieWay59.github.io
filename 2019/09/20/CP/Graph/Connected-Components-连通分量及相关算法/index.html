@@ -2,22 +2,23 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Tag: 照片 - TieWay59&#39;s Blog</title>
+<title>Connected Components 连通分量及相关算法 - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="I&apos;m not hungry, neither foolish.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TieWay59&#39;s Blog">
-<meta property="og:url" content="https://tieway59.github.io/tags/照片/index.html">
+    <meta name="description" content="引子这是一篇久咕之作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Connected Components 连通分量及相关算法">
+<meta property="og:url" content="https://tieway59.github.io/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="I&apos;m not hungry, neither foolish.">
+<meta property="og:description" content="引子这是一篇久咕之作。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-09-20T06:40:34.823Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TieWay59&#39;s Blog">
-<meta name="twitter:description" content="I&apos;m not hungry, neither foolish.">
+<meta name="twitter:title" content="Connected Components 连通分量及相关算法">
+<meta name="twitter:description" content="引子这是一篇久咕之作。">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                <img src="/images/logo.svg" alt="Connected Components 连通分量及相关算法" height="28">
             
             </a>
         </div>
@@ -124,6 +125,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -138,33 +143,22 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">照片</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-08-09T04:16:52.000Z">2019-08-09</time>
+                <time class="level-item has-text-grey" datetime="2019-09-20T06:06:26.000Z">2019-09-20</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
+                <a class="has-link-grey -link" href="/categories/CP/">CP</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/CP/Graph/">Graph</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 72 words)
+                    3 minutes read (About 450 words)
                 </span>
                 
                 
@@ -173,21 +167,39 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/08/09/Misc/Qzone-相册照片链接测试/">Qzone 相册照片链接测试</a>
+                Connected Components 连通分量及相关算法
             
         </h1>
         <div class="content">
-            <p>特别鸣谢<a href="https://www.gugugu.org.cn" target="_blank" rel="noopener">阿翔同学</a>让我想到了这个问题。</p>
+            <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>这是一篇久咕之作。</p>
+<a id="more"></a>
+
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>todo</p>
+<h2 id="引导"><a href="#引导" class="headerlink" title="引导"></a>引导</h2><p>首先，假设我们用的是前向星建图。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> u, v, nx; <span class="hljs-comment">// ,w</span></span><br><span class="line">&#125; e[MAXN &lt;&lt; <span class="hljs-number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> head[MAXN], cntEd;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addEdge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u, <span class="hljs-keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    e[cntEd] = &#123;u, v, head[u]&#125;;</span><br><span class="line">    head[u] = cntEd++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后应该写一个DFS。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tarjan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = head[u]; ~i; i = e[i].nx) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = e[i].v;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> ( ) &#123; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="hljs-keyword">if</span> ( ) &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面想需要用到什么数组。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">int</span> low[MAXN];					<span class="hljs-comment">//LOWLINK</span></span><br><span class="line"><span class="hljs-keyword">int</span> dfn[MAXN], idx;			<span class="hljs-comment">//NUMBER</span></span><br><span class="line"><span class="hljs-keyword">int</span> stk[MAXN], top;			<span class="hljs-comment">//STACK for cc</span></span><br><span class="line"><span class="hljs-keyword">int</span> scc[MAXN], sccnum;	<span class="hljs-comment">//SCC tags</span></span><br></pre></td></tr></table></figure>
+
+<p>然后想一下每个数组的意义，填进DFS。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">tarjan</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">    dfn[u] = low[u] = ++idx;</span><br><span class="line">    stk[++top] = u;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = head[u]; ~i; i = e[i].nx) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = e[i].v;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">if</span> (!dfn[v]) &#123;    			<span class="hljs-comment">//如果v结点未访问过</span></span><br><span class="line">            tarjan(v);</span><br><span class="line">            low[u] = min(low[u], low[v]);</span><br><span class="line">        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!scc[v]) &#123;		<span class="hljs-comment">//如果还在栈内</span></span><br><span class="line">            low[u] = min(low[u], dfn[v]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">if</span> (low[u] == dfn[u]) &#123;			<span class="hljs-comment">//后代不能找到更浅的点</span></span><br><span class="line">        sccnum++;</span><br><span class="line">        <span class="hljs-keyword">int</span> x;</span><br><span class="line">        <span class="hljs-keyword">do</span> &#123;</span><br><span class="line">            x = stk[top--];</span><br><span class="line">            scc[x] = sccnum;</span><br><span class="line">        &#125; <span class="hljs-keyword">while</span> (x != u);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后学会怎么用它。</p>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">memset</span>(head, <span class="hljs-number">-1</span>, <span class="hljs-keyword">sizeof</span> head);</span><br><span class="line">    <span class="hljs-keyword">int</span> n;</span><br><span class="line">  </span><br><span class="line">  	<span class="hljs-comment">//input &amp; build graph ...</span></span><br><span class="line">  </span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (!dfn[i])</span><br><span class="line">            tarjan(i);</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  	<span class="hljs-comment">//scc[v] ...</span></span><br><span class="line">  </span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好了假装你会了。</p>
+<p>当然要真的会了，可以试图去理解一下，DFS中的条件。</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="SCC-Directed-Roads"><a href="#SCC-Directed-Roads" class="headerlink" title="SCC / Directed Roads"></a>SCC / <a href="https://codeforces.com/contest/711/problem/D" target="_blank" rel="noopener">Directed Roads</a></h3><p>给一个n点n边有向无权图。问，有多少种反转边的方案，使图中无简单环。</p>
+<p>思路也简单，每条边反转和不反转有$2^n$种方案。假如有一个$m$阶环，有两种方案是不行的——全反转和全不反转。所以对每个$m_i$阶环，其实方案有$2^{m_i}-2$种方案。</p>
+<p>其他边都当$2$累乘即可。</p>
+<p>我的代码：<a href="https://codeforces.com/contest/711/submission/60847488" target="_blank" rel="noopener">60847488</a></p>
+<p><a href="https://epubs.siam.org/doi/pdf/10.1137/0201010" target="_blank" rel="noopener">Tarjan 1972</a></p>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/08/09/Misc/Qzone-相册照片链接测试/#more">Read More</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
@@ -195,9 +207,50 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/ali.png" alt="Alipay"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wc.png" alt="Wechat"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/18/CP/Logs/2019-09-18-2019-ICPC-UNdC/">
+                <span class="level-item">2019-9-18 2019 ICPC UNdC</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -302,6 +355,37 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#引子">
+        <span class="has-mr-6">1</span>
+        <span>引子</span>
+        </a></li><li>
+        <a class="is-flex" href="#模板">
+        <span class="has-mr-6">2</span>
+        <span>模板</span>
+        </a></li><li>
+        <a class="is-flex" href="#引导">
+        <span class="has-mr-6">3</span>
+        <span>引导</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题">
+        <span class="has-mr-6">4</span>
+        <span>例题</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#SCC-Directed-Roads">
+        <span class="has-mr-6">4.1</span>
+        <span>SCC / Directed Roads</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -964,7 +1048,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                    <img src="/images/logo.svg" alt="Connected Components 连通分量及相关算法" height="28">
                 
                 </a>
                 <p class="is-size-7">

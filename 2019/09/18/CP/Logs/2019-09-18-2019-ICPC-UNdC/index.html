@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="Name AC    Amazon    Boring Non-Palindrome    Common Subsequence    Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation    Hardest Challenge    Integer Prefix √+   Jail D">
+    <meta name="description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019-9-18 2019 ICPC UNdC">
 <meta property="og:url" content="https://tieway59.github.io/2019/09/18/CP/Logs/2019-09-18-2019-ICPC-UNdC/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="Name AC    Amazon    Boring Non-Palindrome    Common Subsequence    Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation    Hardest Challenge    Integer Prefix √+   Jail D">
+<meta property="og:description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/gallery/logs.png">
-<meta property="og:updated_time" content="2019-09-18T13:40:03.097Z">
+<meta property="og:updated_time" content="2019-09-18T13:45:52.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019-9-18 2019 ICPC UNdC">
-<meta name="twitter:description" content="Name AC    Amazon    Boring Non-Palindrome    Common Subsequence    Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation    Hardest Challenge    Integer Prefix √+   Jail D">
+<meta name="twitter:description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+">
 <meta name="twitter:image" content="https://tieway59.github.io/gallery/logs.png">
 
 
@@ -164,7 +164,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 minutes read (About 1126 words)
+                    8 minutes read (About 1162 words)
                 </span>
                 
                 
@@ -194,11 +194,11 @@
 </tr>
 <tr>
 <td><a href="https://codeforces.com/gym/102307/problem/B" target="_blank" rel="noopener">Boring Non-Palindrome</a></td>
-<td></td>
+<td><code>√-</code></td>
 </tr>
 <tr>
 <td><a href="https://codeforces.com/gym/102307/problem/C" target="_blank" rel="noopener">Common Subsequence</a></td>
-<td></td>
+<td><code>√-</code></td>
 </tr>
 <tr>
 <td><a href="https://codeforces.com/gym/102307/problem/D" target="_blank" rel="noopener">Do Not Try This Problem</a></td>
@@ -214,7 +214,7 @@
 </tr>
 <tr>
 <td><a href="https://codeforces.com/gym/102307/problem/G" target="_blank" rel="noopener">Graduation</a></td>
-<td></td>
+<td><code>√-</code></td>
 </tr>
 <tr>
 <td><a href="https://codeforces.com/gym/102307/problem/H" target="_blank" rel="noopener">Hardest Challenge</a></td>
@@ -230,7 +230,7 @@
 </tr>
 <tr>
 <td><a href="https://codeforces.com/gym/102307/problem/K" target="_blank" rel="noopener">Kernel Of Love</a></td>
-<td></td>
+<td><code>√-</code></td>
 </tr>
 <tr>
 <td><a href="https://codeforces.com/gym/102307/problem/L" target="_blank" rel="noopener">Liquid X</a></td>
@@ -242,6 +242,11 @@
 <li><code>√+</code> 代表赛内我通过的</li>
 <li><code>√-</code> 代表赛内不是我做的</li>
 <li><code>√-○</code>代表赛内不是我做的，补了</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>做F意识到了学python的快乐（然而不会</li>
+<li>中间读错题有点伤</li>
+<li>python的Fraction不好用  </li>
 </ul>
 <h2 id="L-Integer-Prefix"><a href="#L-Integer-Prefix" class="headerlink" title="L. Integer Prefix"></a>L. Integer Prefix</h2><p>输出最长的纯数字前缀。</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="hljs-keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> n;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">3</span>) &#123;</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"0\n"</span>);</span><br><span class="line">            <span class="hljs-keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">int</span> ans = n / <span class="hljs-number">3</span> * <span class="hljs-number">2</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span> (n % <span class="hljs-number">3</span>)ans++;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -311,6 +316,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Connected Components 连通分量及相关算法</span>
+            </a>
+        </div>
+        
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/">
@@ -368,7 +380,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        21
                     </p>
                 </div>
             </div>
@@ -378,7 +390,7 @@
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -432,24 +444,28 @@
                 Catalogue
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#L-Integer-Prefix">
+        <a class="is-flex" href="#小结">
         <span class="has-mr-6">1</span>
+        <span>小结</span>
+        </a></li><li>
+        <a class="is-flex" href="#L-Integer-Prefix">
+        <span class="has-mr-6">2</span>
         <span>L. Integer Prefix</span>
         </a></li><li>
         <a class="is-flex" href="#B-Boring-Non-Palindrome">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">3</span>
         <span>B. Boring Non-Palindrome</span>
         </a></li><li>
         <a class="is-flex" href="#K-Kernel-Of-Love">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">4</span>
         <span>K. Kernel Of Love</span>
         </a></li><li>
         <a class="is-flex" href="#G-Graduation">
-        <span class="has-mr-6">4</span>
+        <span class="has-mr-6">5</span>
         <span>G. Graduation</span>
         </a></li><li>
         <a class="is-flex" href="#D-Do-Not-Try-This-Problem">
-        <span class="has-mr-6">5</span>
+        <span class="has-mr-6">6</span>
         <span>D. Do Not Try This Problem</span>
         </a></li></ul>
         </div>
@@ -521,9 +537,17 @@
                 <span class="level-item">CP</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/CP/Graph/">
+            <span class="level-start">
+                <span class="level-item">Graph</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/CP/Logs/">
             <span class="level-start">
                 <span class="level-item">Logs</span>
@@ -592,6 +616,25 @@
         
         <article class="media">
             
+            <a href="/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Connected Components 连通分量及相关算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T06:06:26.000Z">2019-09-20</time></div>
+                    <a href="/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Connected Components 连通分量及相关算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Graph/">Graph</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/09/18/CP/Logs/2019-09-18-2019-ICPC-UNdC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/logs.png" alt="2019-9-18 2019 ICPC UNdC">
@@ -630,25 +673,6 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/09/16/CP/C++/common-sense/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="common sense">
@@ -668,16 +692,16 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/map/" class="media-left">
+            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="map">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:35.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/map/" class="title has-link-black-ter is-size-6 has-text-weight-normal">map</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/c/">c++</a>
                     </p>
@@ -703,7 +727,7 @@
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
@@ -855,6 +879,25 @@
         
         <article class="media">
             
+            <a href="/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Connected Components 连通分量及相关算法">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T06:06:26.000Z">2019-09-20</time></div>
+                    <a href="/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Connected Components 连通分量及相关算法</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Graph/">Graph</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/09/18/CP/Logs/2019-09-18-2019-ICPC-UNdC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/gallery/logs.png" alt="2019-9-18 2019 ICPC UNdC">
@@ -893,25 +936,6 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/09/16/CP/C++/common-sense/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="common sense">
@@ -931,16 +955,16 @@
         
         <article class="media">
             
-            <a href="/2019/09/16/CP/C++/map/" class="media-left">
+            <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="map">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="operator overloading 重载运算符">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:35.000Z">2019-09-16</time></div>
-                    <a href="/2019/09/16/CP/C++/map/" class="title has-link-black-ter is-size-6 has-text-weight-normal">map</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time></div>
+                    <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/c/">c++</a>
                     </p>
@@ -966,7 +990,7 @@
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">8</span>
+                    <span class="level-item tag">9</span>
                 </span>
             </a>
         </li>
