@@ -2,22 +2,24 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Archives - TieWay59&#39;s Blog</title>
+<title>今天我会kruskal重构树了吗？ - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="I&apos;m not hungry, neither foolish.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TieWay59&#39;s Blog">
-<meta property="og:url" content="https://tieway59.github.io/archives/index.html">
+    <meta name="description" content="我并不会，甚至还欠了一屁股博客要读。">
+<meta name="keywords" content="Todo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="今天我会kruskal重构树了吗？">
+<meta property="og:url" content="https://tieway59.github.io/2019/09/24/今天我会kruskal重构树了吗？/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="I&apos;m not hungry, neither foolish.">
+<meta property="og:description" content="我并不会，甚至还欠了一屁股博客要读。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-09-24T14:04:40.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TieWay59&#39;s Blog">
-<meta name="twitter:description" content="I&apos;m not hungry, neither foolish.">
+<meta name="twitter:title" content="今天我会kruskal重构树了吗？">
+<meta name="twitter:description" content="我并不会，甚至还欠了一屁股博客要读。">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -92,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                <img src="/images/logo.svg" alt="今天我会kruskal重构树了吗？" height="28">
             
             </a>
         </div>
@@ -102,7 +104,7 @@
                 
                 <a class="navbar-item" href="/">Home</a>
                 
-                <a class="navbar-item is-active" href="/archives">Archives</a>
+                <a class="navbar-item" href="/archives">Archives</a>
                 
                 <a class="navbar-item" href="/categories">Categories</a>
                 
@@ -124,6 +126,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -137,249 +143,116 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
         
-<div class="card widget">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-09-24T13:55:39.000Z">2019-09-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/CP/">CP</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/CP/Graph/">Graph</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 348 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                今天我会kruskal重构树了吗？
+            
+        </h1>
+        <div class="content">
+            <p>我并不会，甚至还欠了一屁股博客要读。</p>
+<a id="more"></a>
+
+<p>咋办？</p>
+<p><a href="https://www.cnblogs.com/ww3113306/p/9746449.html" target="_blank" rel="noopener">https://www.cnblogs.com/ww3113306/p/9746449.html</a></p>
+<blockquote>
+<p>在普通的kruskal中，如果一条边连接了在2个不同集合中的点的话，我们将合并这2个点所在集合。<br>而在kruskal重构树中，如果一条边连接了在2个不同集合中的点，我们将新建一个节点出来，并用这个新节点作为一个中转连接这2个集合。<br>如图就是一棵kruskal重构树，方点表示新建出的节点，圆点是原图中的点，方点点权即边权。</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/hwzzyr/article/details/81190442" target="_blank" rel="noopener">https://blog.csdn.net/hwzzyr/article/details/81190442</a></p>
+<blockquote>
+<p>相信大家都会Kruskal由于重构树中把原树的点权转换成为了新建节点的边权，这一过程是这样实现的。<br>首先对边排序<br>然后使用并查集辅助加边，每新建一条边时：<br>新建节点index（编号从n+1开始）<br>将原有两节点所在集合改为index<br>将原有节点与index连边<br>新建节点的权值为当前边的边权<br>给一下简单的代码</p>
+</blockquote>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Ex_Kruskal</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> ind=n,lim=n&lt;&lt;<span class="hljs-number">1</span>; sort(e+<span class="hljs-number">1</span>,e+<span class="hljs-number">1</span>+m);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=lim;++i) f[i]=i;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;++i) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> fx=getfa(e[i].a),fy=getfa(e[i].b);</span><br><span class="line">        <span class="hljs-keyword">if</span>(fx!=fy) &#123;</span><br><span class="line">            f[fx]=f[fy]=++ind;</span><br><span class="line">            val[ind]=e[i].w;</span><br><span class="line">            add(ind,fx); add(ind,fy);</span><br><span class="line">            <span class="hljs-keyword">if</span>(ind==lim<span class="hljs-number">-1</span>) <span class="hljs-keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="hljs-keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/niiick/article/details/81952126" target="_blank" rel="noopener">https://blog.csdn.net/niiick/article/details/81952126</a></p>
+<p><a href="https://blog.csdn.net/hwzzyr/article/details/81190442" target="_blank" rel="noopener">https://blog.csdn.net/hwzzyr/article/details/81190442</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Todo/">Todo</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-24T13:55:39.000Z">2019-09-24</time>
-                        <a href="/2019/09/24/今天我会kruskal重构树了吗？/" class="title has-link-black-ter is-size-6 has-text-weight-normal">今天我会kruskal重构树了吗？</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Graph/">Graph</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/ali.png" alt="Alipay"></div>
+</a>
+
                 
-                <a href="/2019/09/24/CP/Solutions/COJ-11B-usiness-奇怪dp/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/gallery/solution.jpg" alt="COJ-11B 奇怪dp">
-                    </p>
-                </a>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-24T12:24:17.000Z">2019-09-24</time>
-                        <a href="/2019/09/24/CP/Solutions/COJ-11B-usiness-奇怪dp/" class="title has-link-black-ter is-size-6 has-text-weight-normal">COJ-11B 奇怪dp</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wc.png" alt="Wechat"></div>
+</a>
+
                 
-                <a href="/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="http://a3.qpic.cn/psb?/V10F2gs73ZU6FA/6k.lN.3MqsOXF.K0ipdcsHzQWk7XfxV3lHlOz4jgmjU!/b/dFIBAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=tQTUAgAAAAADVxU!&amp;tl=1&amp;vuin=2728735169&amp;tm=1568970000&amp;sce=60-2-2&amp;rf=viewer_4&amp;t=5" alt="Connected Components 连通分量及相关算法">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-20T06:06:26.000Z">2019-09-20</time>
-                        <a href="/2019/09/20/CP/Graph/Connected-Components-连通分量及相关算法/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Connected Components 连通分量及相关算法</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Graph/">Graph</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <a href="/2019/09/18/CP/Logs/2019-09-18-2019-ICPC-UNdC/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/gallery/logs.png" alt="2019-9-18 2019 ICPC UNdC">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-18T12:50:46.000Z">2019-09-18</time>
-                        <a href="/2019/09/18/CP/Logs/2019-09-18-2019-ICPC-UNdC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019-9-18 2019 ICPC UNdC</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time>
-                        <a href="/2019/09/16/CP/C++/random 伪随机，与更好的伪随机/" class="title has-link-black-ter is-size-6 has-text-weight-normal">random 伪随机，与更好的伪随机</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time>
-                        <a href="/2019/09/16/CP/C++/operator overloading 重载运算符/" class="title has-link-black-ter is-size-6 has-text-weight-normal">operator overloading 重载运算符</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-16T10:14:36.000Z">2019-09-16</time>
-                        <a href="/2019/09/16/CP/C++/common-sense/" class="title has-link-black-ter is-size-6 has-text-weight-normal">common sense</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-16T10:14:35.000Z">2019-09-16</time>
-                        <a href="/2019/09/16/CP/C++/map/" class="title has-link-black-ter is-size-6 has-text-weight-normal">map</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-16T10:14:32.000Z">2019-09-16</time>
-                        <a href="/2019/09/16/CP/C++/sort 排序/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sort 排序</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-09-16T10:14:12.000Z">2019-09-16</time>
-                        <a href="/2019/09/16/CP/C++/unordered_map/" class="title has-link-black-ter is-size-6 has-text-weight-normal">unordered_map</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/c/">c++</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
         </div>
     </div>
 </div>
 
-    
 
-    
+
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/page/0/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/24/CP/Solutions/COJ-11B-usiness-奇怪dp/">
+                <span class="level-item">COJ-11B 奇怪dp</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/page/2/">Next</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/archives/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/page/3/">3</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -482,6 +355,17 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1158,7 +1042,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                    <img src="/images/logo.svg" alt="今天我会kruskal重构树了吗？" height="28">
                 
                 </a>
                 <p class="is-size-7">
