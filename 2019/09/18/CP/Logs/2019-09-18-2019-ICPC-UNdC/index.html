@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+   Ja">
+    <meta name="description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+   Jail">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2019-9-18 2019 ICPC UNdC">
 <meta property="og:url" content="https://tieway59.github.io/2019/09/18/CP/Logs/2019-09-18-2019-ICPC-UNdC/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+   Ja">
+<meta property="og:description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+   Jail">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/gallery/logs.png">
-<meta property="og:updated_time" content="2019-09-25T05:53:35.203Z">
+<meta property="og:updated_time" content="2019-09-25T05:54:38.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019-9-18 2019 ICPC UNdC">
-<meta name="twitter:description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+   Ja">
+<meta name="twitter:description" content="Name AC    Amazon    Boring Non-Palindrome √-   Common Subsequence √-   Do Not Try This Problem    Extreme Image    Fraction Formula    Graduation √-   Hardest Challenge    Integer Prefix √+   Jail">
 <meta name="twitter:image" content="https://tieway59.github.io/gallery/logs.png">
 
 
@@ -164,7 +164,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 minutes read (About 1163 words)
+                    8 minutes read (About 1162 words)
                 </span>
                 
                 
@@ -177,9 +177,7 @@
             
         </h1>
         <div class="content">
-            <a id="more"></a>
-
-<table>
+            <table>
 <thead>
 <tr>
 <th>Name</th>
@@ -235,21 +233,21 @@
 <td></td>
 </tr>
 </tbody></table>
-<!--more-->
-
 <ul>
 <li><code>○</code> 代表赛后补题</li>
 <li><code>√+</code> 代表赛内我通过的</li>
 <li><code>√-</code> 代表赛内不是我做的</li>
 <li><code>√-○</code>代表赛内不是我做的，补了</li>
 </ul>
+<a id="more"></a>
+
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
 <li>做F意识到了学python的快乐（然而不会</li>
 <li>中间读错题有点伤</li>
 <li>python的Fraction不好用  </li>
 </ul>
 <h2 id="L-Integer-Prefix"><a href="#L-Integer-Prefix" class="headerlink" title="L. Integer Prefix"></a>L. Integer Prefix</h2><p>输出最长的纯数字前缀。</p>
-<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="hljs-keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> n;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">3</span>) &#123;</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"0\n"</span>);</span><br><span class="line">            <span class="hljs-keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">int</span> ans = n / <span class="hljs-number">3</span> * <span class="hljs-number">2</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span> (n % <span class="hljs-number">3</span>)ans++;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;T);</span><br><span class="line">    <span class="hljs-keyword">while</span> (T--) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> n;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">3</span>) &#123;</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"0\n"</span>);</span><br><span class="line">            <span class="hljs-keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">int</span> ans = n / <span class="hljs-number">3</span> * <span class="hljs-number">2</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span> (n % <span class="hljs-number">3</span>)ans++;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>, ans);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="B-Boring-Non-Palindrome"><a href="#B-Boring-Non-Palindrome" class="headerlink" title="B. Boring Non-Palindrome"></a>B. Boring Non-Palindrome</h2><p>bnc稍微读错了，意思是在串的末尾添加最少的元素，使得串变成回文串。</p>
 <p>我们的做法是，做一下Manacher，找到最长的后缀回文串。</p>
