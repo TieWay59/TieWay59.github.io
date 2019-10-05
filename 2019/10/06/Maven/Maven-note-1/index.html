@@ -15,7 +15,7 @@
 <meta property="og:description" content="【背景】假设我们开发一个项目，或者做一个小demo，如果用···，那么我们就必须将···所依赖的jar包依次找出来，并手动导入。这个过程会想象一下就比较繁琐。  Maven是基于项目对象模型(POM, project object model)，可以通过一小段描述信息（配置）来管理项目的构建，报告和文档的软件项目管理工具。 主要作用：  选择获取（特定版本的）jar包。  寻找依赖，下载依赖。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-05T18:59:09.342Z">
+<meta property="og:updated_time" content="2019-10-05T19:11:54.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven - note 1">
 <meta name="twitter:description" content="【背景】假设我们开发一个项目，或者做一个小demo，如果用···，那么我们就必须将···所依赖的jar包依次找出来，并手动导入。这个过程会想象一下就比较繁琐。  Maven是基于项目对象模型(POM, project object model)，可以通过一小段描述信息（配置）来管理项目的构建，报告和文档的软件项目管理工具。 主要作用：  选择获取（特定版本的）jar包。  寻找依赖，下载依赖。">
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    7 minutes read (About 997 words)
+                    7 minutes read (About 1003 words)
                 </span>
                 
                 
@@ -190,7 +190,7 @@
 <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><blockquote>
 <p>常见的简单结构</p>
 </blockquote>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┬ /.settings</span><br><span class="line">├ /src</span><br><span class="line">| ├ /main</span><br><span class="line">| └ /test</span><br><span class="line">├ /target</span><br><span class="line">| └ /class</span><br><span class="line">├ .classpath</span><br><span class="line">├ .project</span><br><span class="line">└ pom.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┬ /.settings</span><br><span class="line">├ /src</span><br><span class="line">│ ├ /main</span><br><span class="line">│ └ /test</span><br><span class="line">├ /target</span><br><span class="line">│ └ /class</span><br><span class="line">├ .classpath</span><br><span class="line">├ .project</span><br><span class="line">└ pom.xml</span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -245,7 +245,7 @@
 </li>
 </ul>
 <h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3><p>???</p>
-<h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┬ /bin</span><br><span class="line">├ /boot</span><br><span class="line">├ /conf</span><br><span class="line">| ├ /logging</span><br><span class="line">| ├ settings.xml</span><br><span class="line">| └ toolchains.xml</span><br><span class="line">├ /lib</span><br><span class="line">├ LICENCE</span><br><span class="line">├ NOTICE </span><br><span class="line">└ README.txt</span><br></pre></td></tr></table></figure>
+<h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┬ /bin</span><br><span class="line">├ /boot</span><br><span class="line">├ /conf</span><br><span class="line">│ ├ /logging</span><br><span class="line">│ ├ settings.xml</span><br><span class="line">│ └ toolchains.xml</span><br><span class="line">├ /lib</span><br><span class="line">├ LICENCE</span><br><span class="line">├ NOTICE </span><br><span class="line">└ README.txt</span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
