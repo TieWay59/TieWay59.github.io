@@ -2,22 +2,23 @@
 <html lang="en">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Archives: 2019 - TieWay59&#39;s Blog</title>
+<title>Maven - note 1 - TieWay59&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="I&apos;m not hungry, neither foolish.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TieWay59&#39;s Blog">
-<meta property="og:url" content="https://tieway59.github.io/archives/2019/page/3/index.html">
+    <meta name="description" content="【背景】假设我们开发一个项目，或者做一个小demo，如果用···，那么我们就必须将···所依赖的jar包依次找出来，并手动导入。这个过程会想象一下就比较繁琐。  Maven是基于项目对象模型(POM, project object model)，可以通过一小段描述信息（配置）来管理项目的构建，报告和文档的软件项目管理工具。 主要作用：  选择获取（特定版本的）jar包。  寻找依赖，下载依赖。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven - note 1">
+<meta property="og:url" content="https://tieway59.github.io/2019/10/06/Maven/Maven-note-1/index.html">
 <meta property="og:site_name" content="TieWay59&#39;s Blog">
-<meta property="og:description" content="I&apos;m not hungry, neither foolish.">
+<meta property="og:description" content="【背景】假设我们开发一个项目，或者做一个小demo，如果用···，那么我们就必须将···所依赖的jar包依次找出来，并手动导入。这个过程会想象一下就比较繁琐。  Maven是基于项目对象模型(POM, project object model)，可以通过一小段描述信息（配置）来管理项目的构建，报告和文档的软件项目管理工具。 主要作用：  选择获取（特定版本的）jar包。  寻找依赖，下载依赖。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tieway59.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-05T18:59:09.342Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TieWay59&#39;s Blog">
-<meta name="twitter:description" content="I&apos;m not hungry, neither foolish.">
+<meta name="twitter:title" content="Maven - note 1">
+<meta name="twitter:description" content="【背景】假设我们开发一个项目，或者做一个小demo，如果用···，那么我们就必须将···所依赖的jar包依次找出来，并手动导入。这个过程会想象一下就比较繁琐。  Maven是基于项目对象模型(POM, project object model)，可以通过一小段描述信息（配置）来管理项目的构建，报告和文档的软件项目管理工具。 主要作用：  选择获取（特定版本的）jar包。  寻找依赖，下载依赖。">
 <meta name="twitter:image" content="https://tieway59.github.io/images/og_image.png">
 
 
@@ -92,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                <img src="/images/logo.svg" alt="Maven - note 1" height="28">
             
             </a>
         </div>
@@ -124,6 +125,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -137,141 +142,216 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-9-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-05T18:56:52.000Z">2019-10-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Maven/">Maven</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 997 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Maven - note 1
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>【背景】假设我们开发一个项目，或者做一个小demo，如果用···，那么我们就必须将···所依赖的jar包依次找出来，并手动导入。这个过程会想象一下就比较繁琐。</p>
+</blockquote>
+<p>Maven是基于<strong>项目对象模型</strong>(POM, <em>project object model</em>)，可以通过一小段描述信息（配置）来管理项目的构建，报告和文档的<strong>软件项目管理工具</strong>。</p>
+<p>主要作用：</p>
+<ul>
+<li><p>选择获取（特定版本的）jar包。</p>
+</li>
+<li><p>寻找依赖，下载依赖。</p>
+</li>
+<li><p>热部署，热编译。（减免重启服务器/重新部署）</p>
+</li>
+</ul>
+<a id="more"></a>
 
-<div class="card widget">
+<p>[TOC]</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><blockquote>
+<p>常见的简单结构</p>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┬ /.settings</span><br><span class="line">├ /src</span><br><span class="line">| ├ /main</span><br><span class="line">| └ /test</span><br><span class="line">├ /target</span><br><span class="line">| └ /class</span><br><span class="line">├ .classpath</span><br><span class="line">├ .project</span><br><span class="line">└ pom.xml</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>路径/文件</th>
+<th>主要用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/src</code></td>
+<td>主要存放源代码文件，其中一般有两个文件目录；</td>
+</tr>
+<tr>
+<td><code>/src/main</code></td>
+<td>放用于运行项目的代码，再下一级的目录就是各种package。</td>
+</tr>
+<tr>
+<td><code>/src/test</code></td>
+<td>放用于测试项目的代码，同时都拥有resource资源文件。</td>
+</tr>
+<tr>
+<td><code>/target</code></td>
+<td>放编译后的代码。</td>
+</tr>
+<tr>
+<td><code>pom.xml</code></td>
+<td>资源文件，确定该项目需要使用哪些jar包的坐标，并通过该坐标在中央仓库进行自动下载。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Tips: 所以 pom.xml 大概是怎么做的？</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span></span><br><span class="line">&gt;     <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">&gt;         <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">&gt;         <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">&gt;         <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.2.5<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line">&gt;     <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">&gt; <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>通过三个元素标识一个Maven项目，IDE就能去远程仓库下载了。</p>
+</blockquote>
+<h2 id="安装与配置"><a href="#安装与配置" class="headerlink" title="安装与配置"></a>安装与配置</h2><h3 id="Win10"><a href="#Win10" class="headerlink" title="Win10"></a>Win10</h3><p>前提：建议先装好JDK。</p>
+<ul>
+<li><p>访问<a href="https://maven.apache.org/" target="_blank" rel="noopener">官网</a></p>
+</li>
+<li><p>找到<a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">下载</a></p>
+</li>
+<li><p>选对文件(win10应该选bin.zip吧？)</p>
+</li>
+<li><p>查看官方<a href="https://maven.apache.org/install.html" target="_blank" rel="noopener">指南</a></p>
+</li>
+<li><p>解压到合适的路径</p>
+</li>
+<li><p>把bin目录的绝对路径，加入系统环境变量PATH</p>
+</li>
+<li><p>命令行输入<code>mvn -v</code>看看返回的版本信息。</p>
+</li>
+</ul>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3><p>???</p>
+<h3 id="目录结构-1"><a href="#目录结构-1" class="headerlink" title="目录结构"></a>目录结构</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">┬ /bin</span><br><span class="line">├ /boot</span><br><span class="line">├ /conf</span><br><span class="line">| ├ /logging</span><br><span class="line">| ├ settings.xml</span><br><span class="line">| └ toolchains.xml</span><br><span class="line">├ /lib</span><br><span class="line">├ LICENCE</span><br><span class="line">├ NOTICE </span><br><span class="line">└ README.txt</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>路径/文件</th>
+<th>主要用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/bin</code></td>
+<td>放Maven的启动文件，包括两种：一种是直接启动，另一种是通过debug模式下启动。</td>
+</tr>
+<tr>
+<td><code>/boot</code></td>
+<td>放类加载器框架。</td>
+</tr>
+<tr>
+<td><code>/conf</code></td>
+<td>放全局配置文件<code>setting.xml</code>，即为所有仓库都实施的配置。仓库也有私有配置的setting，一般推荐使用私有配置，因为全局配置在Maven的安装目录里。</td>
+</tr>
+<tr>
+<td><code>/lib</code></td>
+<td>放Maven运行需要的各种jar包。</td>
+</tr>
+<tr>
+<td><code>LICENCE</code></td>
+<td>Maven的软件使用许可证书</td>
+</tr>
+<tr>
+<td><code>NOTICE</code></td>
+<td>Maven包含的第三方软件</td>
+</tr>
+<tr>
+<td><code>README.txt</code></td>
+<td>Maven的简单介绍以及安装说明</td>
+</tr>
+</tbody></table>
+<h3 id="解决下载——镜像"><a href="#解决下载——镜像" class="headerlink" title="解决下载——镜像"></a>解决下载——镜像</h3><p>因为众所周知的原因，在国内用Maven一般情况是很难下载到东西的。</p>
+<p>现在一般都是在<code>setting.xml</code>的<code>&lt;mirrors&gt;</code>标签里加阿里云的镜像就可以了。</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>alimaven<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>aliyun maven<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/repositories/central/<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="解决下载——代理"><a href="#解决下载——代理" class="headerlink" title="解决下载——代理"></a>解决下载——代理</h3><p>一般是个人希望用工具去下官方仓库的东西，或者有特殊的任务需求才会用把。</p>
+<p>能代理的前提是，你有一个可以ping得通<code>repol.maven.org</code>的代理服务器访问权哦。</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">proxy</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>optional<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span>    //代理Id</span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">active</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">active</span>&gt;</span>   //是否要激活</span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">protocol</span>&gt;</span>http<span class="hljs-tag">&lt;/<span class="hljs-name">protocol</span>&gt;</span>  //采用协议</span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">username</span>&gt;</span>proxyuser<span class="hljs-tag">&lt;/<span class="hljs-name">username</span>&gt;</span>   //如果代理需要认证就需要账号密码</span><br><span class="line"> 	<span class="hljs-tag">&lt;<span class="hljs-name">password</span>&gt;</span>proxypass<span class="hljs-tag">&lt;/<span class="hljs-name">password</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">host</span>&gt;</span>proxy.host.net<span class="hljs-tag">&lt;/<span class="hljs-name">host</span>&gt;</span>  // ip</span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">port</span>&gt;</span>80<span class="hljs-tag">&lt;/<span class="hljs-name">port</span>&gt;</span>   //端口</span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">nonProxyHosts</span>&gt;</span>local.net|some.host.com<span class="hljs-tag">&lt;/<span class="hljs-name">nonProxyHosts</span>&gt;</span>  </span><br><span class="line">    //不需要代理的主机ip用户|隔开，例如里面的some.host.com，即所有对这个网站的访问都不需要代理</span><br><span class="line"></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">proxy</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/ASzhiwei/article/details/85158211" target="_blank" rel="noopener">【长】Maven从入门到精通</a></p>
+<p><a href="https://www.cnblogs.com/whgk/p/7112560.html" target="_blank" rel="noopener">【长】maven(一) maven到底是个啥玩意~</a></p>
+<p><a href="https://www.cnblogs.com/zhuqi7758258/articles/10644309.html" target="_blank" rel="noopener">【中】Maven是什么？</a></p>
+<p><a href="https://www.cnblogs.com/ConfidentLiu/p/7118761.html" target="_blank" rel="noopener">【短/附书】Maven的作用到底是什么</a></p>
+<p><a href="https://www.infoq.cn/article/maven-in-action/" target="_blank" rel="noopener">【电子书/要注册】Maven实战</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        2019
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
                 
-                <a href="/2019/08/08/CP/Logs/2019-8-8-牛客多校第七场/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.8 牛客多校第七场">
-                    </p>
-                </a>
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>Alipay</span>
+    <div class="qrcode"><img src="/images/ali.png" alt="Alipay"></div>
+</a>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-08-08T13:57:17.000Z">2019-08-08</time>
-                        <a href="/2019/08/08/CP/Logs/2019-8-8-牛客多校第七场/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.8 牛客多校第七场</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
                 
-                <a href="/2019/08/08/CP/Solutions/hdu-6638-线段树-最大子段和/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/gallery/solution.jpg" alt="hdu-6638 线段树 最大子段和">
-                    </p>
-                </a>
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>Wechat</span>
+    <div class="qrcode"><img src="/images/wc.png" alt="Wechat"></div>
+</a>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-08-08T11:56:20.000Z">2019-08-08</time>
-                        <a href="/2019/08/08/CP/Solutions/hdu-6638-线段树-最大子段和/" class="title has-link-black-ter is-size-6 has-text-weight-normal">hdu-6638 线段树 最大子段和</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Solutions/">Solutions</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <a href="/2019/08/07/CP/Logs/2019-8-6-队内训练/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/gallery/logs.png" alt="2019.8.6 队内训练">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-08-07T08:51:58.000Z">2019-08-07</time>
-                        <a href="/2019/08/07/CP/Logs/2019-8-6-队内训练/" class="title has-link-black-ter is-size-6 has-text-weight-normal">2019.8.6 队内训练</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/CP/">CP</a> / <a class="has-link-grey -link" href="/categories/CP/Logs/">Logs</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <a href="/2019/08/05/Misc/Hexo-ICARUS-使用指南与文章模板/" class="media-left">
-                    <p class="image is-64x64">
-                        <img class="thumbnail" src="/gallery/firewatch1.jpg" alt="Hexo+ICARUS 使用指南与文章模板">
-                    </p>
-                </a>
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2019-08-05T14:05:36.000Z">2019-08-05</time>
-                        <a href="/2019/08/05/Misc/Hexo-ICARUS-使用指南与文章模板/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Hexo+ICARUS 使用指南与文章模板</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/Misc/">Misc</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
         </div>
     </div>
 </div>
 
 
 
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/page/2/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/24/CP/Graph/今天我会kruskal重构树了吗？/">
+                <span class="level-item">今天我会kruskal重构树了吗？</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/archives/2019/page/4/">Next</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/2019/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/archives/2019/page/2/">2</a></li>
-            
-            <li><a class="pagination-link is-current" href="/archives/2019/page/3/">3</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
 </div>
+
+
 </div>
                 
 
@@ -374,6 +454,49 @@
 </div>
     
     
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#目录结构">
+        <span class="has-mr-6">1</span>
+        <span>目录结构</span>
+        </a></li><li>
+        <a class="is-flex" href="#安装与配置">
+        <span class="has-mr-6">2</span>
+        <span>安装与配置</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Win10">
+        <span class="has-mr-6">2.1</span>
+        <span>Win10</span>
+        </a></li><li>
+        <a class="is-flex" href="#IDEA">
+        <span class="has-mr-6">2.2</span>
+        <span>IDEA</span>
+        </a></li><li>
+        <a class="is-flex" href="#目录结构-1">
+        <span class="has-mr-6">2.3</span>
+        <span>目录结构</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决下载——镜像">
+        <span class="has-mr-6">2.4</span>
+        <span>解决下载——镜像</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决下载——代理">
+        <span class="has-mr-6">2.5</span>
+        <span>解决下载——代理</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#参考">
+        <span class="has-mr-6">3</span>
+        <span>参考</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
     
 
@@ -669,14 +792,12 @@
     
     
     <!-- <div class="column-right-shadow is-hidden-widescreen "> -->
-    <div class="column-right-shadow is-hidden-widescreen ">
+    <div class="column-right-shadow  ">
         
     </div>
     
 </div>
 
-                
-                
                 
             </div>
         </div>
@@ -687,7 +808,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="TieWay59&#39;s Blog" height="28">
+                    <img src="/images/logo.svg" alt="Maven - note 1" height="28">
                 
                 </a>
                 <p class="is-size-7">
